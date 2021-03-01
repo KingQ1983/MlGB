@@ -1,0 +1,28 @@
+name: A-喜马拉雅极速
+
+on:
+  schedule:
+    - cron: '*/15 * * * * '
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/requirements.txt 
+        
+      - name: 'run 喜马拉雅极速20201010' 
+        run: python3 ./-/xmly3.py 
+        env:
+            XMLY_SPEED_COOKIE: ${{ secrets.XMLY_SPEED_COOKIE }}
+            XMLY_BARK_COOKIE: ${{ secrets.XMLY_BARK_COOKIE }}
+            TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+            TG_USER_ID: ${{ secrets.TG_USER_ID }}
