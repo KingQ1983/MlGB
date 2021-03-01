@@ -1,0 +1,39 @@
+{
+    "name": "dadonggua",
+    "version": "1.0.0",
+    "description": "sign everything",
+    "main": "Ponysitters_Club_Season.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Publicemail/--0.git"
+    },
+    "keywords": [
+        "sign"
+    ],
+    "author": "canghaiyishengxiao2021",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Publicemail/--0/issues"
+    },
+    "homepage": "https://github.com/Publicemail/--0#readme",
+    "dependencies": {
+        "download": "^8.0.0",
+        "request": "^2.88.2",
+        "request-promise": "^4.2.5",
+        "crypto-js": "^4.0.0",
+        "got": "^11.5.1",
+        "http-server": "^0.12.3",
+        "node-schedule": "^1.3.2",
+        "tough-cookie": "^4.0.0",
+        "websocket": "^1.0.33",
+         "axios": "0.20.0",
+          "tunnel": "0.0.6",
+          "node-cron": "2.0.3"
+        
+        
+        
+    }
+}
