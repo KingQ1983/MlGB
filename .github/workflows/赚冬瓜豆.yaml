@@ -1,0 +1,42 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#赚京豆脚本，一周签到下来可获得30京豆，一天任意时刻运行一次即可
+#活动入口：赚京豆(微信小程序)-赚京豆-签到领京豆
+#更新地址：https://gitee.com/lxk0301/jd_scripts/raw/master/jd_syj.js
+#参考github@jidesheng6修改而来
+
+name: 赚冬瓜豆
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "16 23 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【赚冬瓜豆】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/j0d_s0yj.js
+                  SCKEY: ${{ secrets.SCKEY }}
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
