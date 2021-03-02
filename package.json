@@ -1,5 +1,5 @@
 {
-    "name": "dadonggua",
+    "name": "KingQ1983",
     "version": "1.0.0",
     "description": "sign everything",
     "main": "Ponysitters_Club_Season.js",
@@ -8,17 +8,17 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Publicemail/--0.git"
+        "url": "git+https://github.com/KingQ1983/MlGB.git"
     },
     "keywords": [
         "sign"
     ],
-    "author": "canghaiyishengxiao2021",
+    "author": "KingQ1983",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/Publicemail/--0/issues"
+        "url": "https://github.com/KingQ1983/MlGB/issues"
     },
-    "homepage": "https://github.com/Publicemail/--0#readme",
+    "homepage": "https://github.com/KingQ1983/MlGB#readme",
     "dependencies": {
         "download": "^8.0.0",
         "request": "^2.88.2",
