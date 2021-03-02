@@ -1,0 +1,44 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#京东天天加速链接：https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed.js
+
+#现在只能获取手动提交
+#基于 lxk0301 大佬的版本基础上做了格式划打印调整
+
+#已支持IOS双京东账号, Node.js支持N个京东账号
+#脚本兼容: QuantumultX, Surge, Loon, 小火箭，JSBox, Node.js
+
+
+
+
+name: AA现在只能获取手动提交助力码
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    #schedule:
+        #- cron: "30 16,17 1,8,16,24 * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【现在只能获取手动提交助力码】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/jd_get_share_code.js
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
+                  
