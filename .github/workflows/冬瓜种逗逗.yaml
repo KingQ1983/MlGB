@@ -1,0 +1,48 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#种豆得豆 脚本更新地址：https://gitee.com/lxk0301/jd_scripts/raw/master/jd_plantBean.js
+#更新时间：2021-1-16
+#活动入口：京东APP我的-更多工具-种豆得豆
+#已支持IOS京东双账号,云端N个京东账号
+#脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
+#注：会自动关注任务中的店铺跟商品，介意者勿使用。
+#互助码shareCode请先手动运行脚本查看打印可看到
+#每个京东账号每天只能帮助3个人。多出的助力码将会助力失败。
+#1 7-21/2 * * *
+
+name: 冬瓜种逗逗
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "1 23,1,3,5,7,9,11,13 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【冬瓜种逗逗】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /DJZD.js
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
+                  HELPURL: ${{ secrets. HELPURL }}
+                   

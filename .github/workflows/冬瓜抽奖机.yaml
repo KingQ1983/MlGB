@@ -1,0 +1,43 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#京东抽奖机
+#活动入口：京东APP中各种抽奖活动的汇总
+#自用
+#author：yangtingxiao
+#github： https://github.com/yangtingxiao
+
+name: 冬瓜抽奖机
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "30 3 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【冬瓜抽奖机】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/j00d_lo0ttery0Ma0chine.js
+                  SCKEY: ${{ secrets.SCKEY }}
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
