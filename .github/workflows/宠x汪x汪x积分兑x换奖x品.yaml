@@ -1,0 +1,48 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#LXxxxKKKK脚本更新
+#宠汪汪积分兑换奖品脚本, 目前脚本只兑换京豆，兑换京豆成功，才会发出通知提示，其他情况不通知。
+#更新时间：2021-2-19
+#活动入口：京东APP我的-更多工具-宠汪汪
+#兑换规则：一个账号一天只能兑换一次京豆。
+#兑换奖品成功后才会有系统弹窗通知
+#每日京豆库存会在0:00、8:00、16:00更新，经测试发现中午12:00也会有补发京豆。
+
+
+name: 宠x汪x汪x积分兑x换奖x品
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: " 0 16,0,4,8 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【宠x汪x汪x积分兑x换奖x品】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/j0d_j0y_r0eward.js
+                  SCKEY: ${{ secrets.SCKEY }}
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  HELPURL: ${{ secrets.HELPURL }}
+                  GITHUB: ${{ secrets.GITHUB }}
+                  

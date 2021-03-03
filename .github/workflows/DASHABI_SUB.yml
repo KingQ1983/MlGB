@@ -1,0 +1,29 @@
+name: DASHABI_SUB
+
+on:
+  schedule:
+    - cron: '15 22,23,0-15/1 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/dsb_sub.py
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            dashabi_sub_url: ${{ secrets.dashabi_sub_url }}
+            dashabi_hd: ${{ secrets.dashabi_hd }}
