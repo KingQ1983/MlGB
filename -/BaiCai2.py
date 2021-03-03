@@ -65,7 +65,7 @@ def Z():
       data=json.loads(prehtml(userRes))
       data=data['comps'][0]['data']
       #print(data)
-      msg=data['user_name']+'|'+str(data['user_info']['earned_coin'])+'|'+str(data['user_info']['check_coin'])+'|'+str(data['user_info']['enabled_money']/100)+'|'
+      msg=data['user_name']+'|'+str(data['user_info']['enabled_coin'])+'|'+str(data['user_info']['check_coin'])+'|'+str(data['user_info']['enabled_money']/100)+'|'
       loger(msg)
    except Exception as e:
       print(str(e))
