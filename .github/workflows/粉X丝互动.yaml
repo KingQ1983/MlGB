@@ -1,0 +1,48 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#粉丝互动
+#类似于京东抽奖机，各个店铺的粉丝互动活动。
+#有看到新活动可以私信我添加活动ID。 GitHub@i-chenzhe
+#新手写脚本，难免有bug，能用且用。
+#脚本内置了一个给作者任务助力的网络请求，默认开启，如介意请自行关闭。
+#助力活动链接： https://h5.m.jd.com/babelDiy/Zeus/4ZK4ZpvoSreRB92RRo8bpJAQNoTq/index.html
+#参数 helpAuthor = false
+#更新地址：https://raw.githubusercontent.com/i-chenzhe/qx/main/jd_fanslove.js
+
+
+name: 粉X丝互动
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "3 2 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【粉X丝互动】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/jd_fanslove.js
+                  SCKEY: ${{ secrets.SCKEY }}
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
+                  

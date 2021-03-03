@@ -1,0 +1,48 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+#京东天天加速链接：https://gitee.com/lxk0301/jd_scripts/raw/master/jd_speed.js
+#更新时间：2020-12-25
+#活动入口：京东APP我的-更多工具-天天加速
+#支持京东双账号
+#脚本兼容: QuantumultX, Surge, Loon, JSBox, Node.js
+#每天4京豆，再小的苍蝇也是肉
+#从 https://github.com/Zero-S1/JD_tools/blob/master/JD_speed.py 改写来的
+#建议3小时运行一次，打卡时间间隔是6小时
+
+
+name: 东瓜天天加速
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "10 0-23/3 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【东瓜天天加速】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/j0d_sp0eed.js
+                  SCKEY: ${{ secrets.SCKEY }}
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
+                  

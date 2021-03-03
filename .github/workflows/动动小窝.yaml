@@ -1,0 +1,47 @@
+# This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
+# For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
+# 东东小窝 https://gitee.com/lxk0301/jd_scripts/raw/master/jd_small_home.js
+# 现有功能：
+# 做日常任务任务，每日抽奖（有机会活动京豆，使用的是免费机会，不消耗WO币）
+# 自动使用WO币购买装饰品可以获得京豆，分别可获得5,20，50,100,200,400,700，1200京豆）
+# 注：目前使用此脚本会给脚本内置的两个码进行助力，请知晓
+# 活动入口：京东APP我的-游戏与更多-东东小窝
+# 或 京东APP首页-搜索 玩一玩-DIY理想家
+# 微信小程序入口：
+# 来客有礼 - > 首页 -> 东东小窝
+# 网页入口（注：进入后不能再此刷新，否则会有问题，需重新输入此链接进入）
+# https://h5.m.jd.com/babelDiy/Zeus/2HFSytEAN99VPmMGZ6V4EYWus1x/index.html
+name: 动动小窝
+
+on:
+    # push:
+    #     branches:
+    #         - main
+    schedule:
+        - cron: "29 14 * * *"
+    workflow_dispatch:
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v1
+            - name: Use Node.js 10.x
+              uses: actions/setup-node@v1
+              with:
+                  node-version: 10.x
+            - name: npm install
+              run: |
+                  npm install
+            - name: "运行 【动动小窝】"
+              run: |
+                  node Ponysitters_Club_Season.js
+              env:
+                  JD_COOKIE: ${{ secrets.JD_COOKIE }}
+                  SYNCURL: /The.Flash/The.Flash/s0mall_h0ome.js
+                  BARK_PUSH: ${{ secrets.BARK_PUSH }}
+                  PUSH_KEY: ${{ secrets.PUSH_KEY }}
+                  TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
+                  TG_USER_ID: ${{ secrets.TG_USER_ID }}
+                  EFORK: ${{ secrets.EFORK }}
+                  GITHUB: ${{ secrets.GITHUB }}
