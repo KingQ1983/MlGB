@@ -28,7 +28,7 @@ tklist=[]
 actId1=''
 actId2=''
 actId3=''
-acount=1
+acount=10
 
 liveflag=True
 
@@ -96,11 +96,11 @@ def hand(userRes,k,l):
           if userRes['errorDesc'].find('上限')>0:
              prosecutor['v'+str(l)]=1
           print(userRes['errorCode']+userRes['errorDesc'])
-       time.sleep(random.randint(15,30)/len(tkbdlist))
+       time.sleep(random.randint(30,60)/len(tkbdlist))
     if k==14:
       if userRes['resultCode']== 1:
          print(str(userRes['data']['goldCoinAmt']))
-         time.sleep(random.randint(15,30))
+         time.sleep(random.randint(30,90))
       else:
           print(userRes['errorCode']+userRes['errorDesc'])
           if userRes['errorDesc'].find('台')>0:
