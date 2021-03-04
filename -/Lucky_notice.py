@@ -31,7 +31,9 @@ datalist=[]
 redlist=[]
 wtlist=[]
 zero=0
-
+osenviron['lucky_com_hd']='''
+{"Accept": "*/*","Accept-Encoding": "br, gzip, deflate","Accept-Language": "zh-Hans-CN;q=1, en-US;q=0.9, zh-Hant-CN;q=0.8","Content-Type":"application/x-www-form-urlencoded","User-Agent": "KDApp/1.8.2 (iPhone; iOS 12.4; Scale/2.00)",}
+'''
 
 
 
