@@ -18,7 +18,7 @@ urllist=[]
 hdlist=[]
 keylist=[]
 artlist=[]
-osenviron['lucky_com_hd']='''
+osenviron['lucky_sub_hd']='''
 
 {"Accept": "*/*","Accept-Encoding": "br, gzip, deflate","Accept-Language": "zh-cn","Connection": "keep-alive","Host": "script.baertt.com","User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 12_4 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.20(0x1700142b) NetType/4G Language/zh_CN",}
 
