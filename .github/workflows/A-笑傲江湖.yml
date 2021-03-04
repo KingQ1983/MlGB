@@ -1,0 +1,33 @@
+name: A-笑傲江湖
+
+on:
+  #schedule:
+    #- cron: '*/35 0-15 * * *'
+  #watch:
+    #types: [started]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT 
+        
+      - name: '笑傲江湖3-4' 
+        run: python3 ./-/Xiaoaojianghu.py 
+        env:
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            xb_main_url: ${{ secrets.xb_main_url }}
+            xb_main_hd: ${{ secrets.xb_main_hd }}
+            xb_main_bd: ${{ secrets.xb_main_bd }}
+            xb_tk:${{ secrets.xb_tk }}
+            xb_tk_bd:${{ secrets.xb_tk_bd }}
+            
