@@ -87,7 +87,7 @@ def watch(flag,list):
 def readdata(id):
    enddata=[]
    try:
-     with open('./Lucky/Data'+str(id)+".txt", "r") as f:
+     with open('./-/Data'+str(id)+".txt", "r") as f:
        i=0
        for line in f.readlines():
         line = line.strip('\n')
