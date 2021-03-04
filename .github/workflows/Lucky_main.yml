@@ -1,0 +1,41 @@
+name: Lucky_main
+
+on:
+  schedule:
+    - cron: '0 0,5,10 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT 
+        
+      - name: '-' 
+        run: python3 ./-/Lucky_main.py 
+        env:
+            lucky_main_url: ${{ secrets.lucky_main_url }}
+            lucky_com_hd: ${{ secrets.lucky_com_hd }}
+            lucky_main_num: ${{ secrets.lucky_main_num }}
+            lucky_md5_data1: ${{ secrets.lucky_md5_data1 }}
+            lucky_md5_data2: ${{ secrets.lucky_md5_data2 }}
+            lucky_md5_data3: ${{ secrets.lucky_md5_data3 }}
+            lucky_md5_data4: ${{ secrets.lucky_md5_data4 }}
+            lucky_md5_data5: ${{ secrets.lucky_md5_data5 }}
+            lucky_md5_data6: ${{ secrets.lucky_md5_data6 }}
+            lucky_md5_data7: ${{ secrets.lucky_md5_data7 }}
+            lucky_md5_data8: ${{ secrets.lucky_md5_data8 }}
+            lucky_md5_data9: ${{ secrets.lucky_md5_data9 }}
+            lucky_md5_data10: ${{ secrets.lucky_md5_data10 }}
+            lucky_md5_data11: ${{ secrets.lucky_md5_data11 }}
+            lucky_md5_data12: ${{ secrets.lucky_md5_data12 }}
+            lucky_md5_data13: ${{ secrets.lucky_md5_data13 }}
+            lucky_md5_data14: ${{ secrets.lucky_md5_data14 }}

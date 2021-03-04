@@ -1,0 +1,35 @@
+name: Lucky_notice
+
+on:
+  schedule:
+    - cron: '*/30 21,22,23,0-16 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/Lucky_notice.py 
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_SEVER_JIANG: ${{ secrets.DJJ_SEVER_JIANG }}
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            lucky_com_url: ${{ secrets.lucky_com_url }}
+            lucky_com_hd: ${{ secrets.lucky_com_hd }}
+            lucky_us_ck: ${{ secrets.lucky_us_ck }}
+            lucky_tm_bd: ${{ secrets.lucky_tm_bd }}
+            lucky_red_bd: ${{ secrets.lucky_red_bd }}
+            lucky_sg_rf: ${{ secrets.lucky_sg_rf }}
+            lucky_data_bd: ${{ secrets.lucky_data_bd }}
+            lucky_wt_bd: ${{ secrets.lucky_wt_bd }}
