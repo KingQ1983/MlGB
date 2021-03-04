@@ -28,6 +28,6 @@ jobs:
             xb_main_url: ${{ secrets.xb_main_url }}
             xb_main_hd: ${{ secrets.xb_main_hd }}
             xb_main_bd: ${{ secrets.xb_main_bd }}
-            xb_tk:${{ secrets.xb_tk }}
-            xb_tk_bd:${{ secrets.xb_tk_bd }}
+            xb_tk:$ {{ secrets.xb_tk }}
+            xb_tk_bd: ${{ secrets.xb_tk_bd }}
             
