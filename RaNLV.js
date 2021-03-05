@@ -31,7 +31,7 @@ const $ = Env(zhiyi)
 const notify = $.isNode() ?require('./sendNotify') : '';
 let status, videoid,myid,supportvideoid,supportrank,show;
 status = (status = ($.getval("rlstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const rlurlArr = [], rlheaderArr = [],rlbodyArr = []
+let rlurlArr = [], rlheaderArr = [],rlbodyArr = []
 let rlurl = $.getdata('rlurl')
 let rlheader = $.getdata('rlheader')
 let rlbody = $.getdata('rlbody')
@@ -95,9 +95,8 @@ if ($.isNode()) {
 
 
 !(async () => {
-if (!rlheaderArr[0] && !rlbodyArr[0] && !rlurlArr[0]) 
-{
-$.msg($.name, '【提示】请先获取燃旅视频一cookie')
+if (!rlheaderArr[0] && !rlbodyArr[0] && !rlurlArr[0]) {
+    $.msg($.name, '【提示】请先获取燃旅视频一cookie')
     return;
   }
    console.log(`------------- 共${rlheaderArr.length}个账号----------------\n`)
