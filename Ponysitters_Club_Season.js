@@ -51,10 +51,21 @@ const JXNCTOKENS = process.env.JXNCTOKENS; //京戏农场种子
 
 
 
+let NCShareCodes=[""];//京东农厂
+let JCShareCodes=[""];//惊喜工厂
+let DCShareCodes=[""];//东东农场
+let MCShareCodes=[""];//萌宠
+let MHShareCodes=[""];//京东盲盒
+let ZDShareCodes=[""];//种豆
+let ASShareCodes=[""];//签到领现金
 
+//格式["AA","BB","CC"]
+
+//当前互助码活动(动态更新中):['NC@京东农场', 'AS@签到领现金', 'MC@萌宠', 'JC@惊喜工厂', 'DC@京东工厂', 'ZD@种豆', 'MH@盲盒']
 
 let CookieJDs = [];
 let shareCodes=[];
+
 async function downFile() {
    
     await download(SyncUrl, "./",{filename:'temp.js'});
@@ -77,7 +88,7 @@ async function changeFiele(content, cookie) {
       console.log(`木有互助码数据，请在secret中加入朱丽娜网址`);
       else
      newContent =newContent.replace(`https://raw.githubusercontent.com/jd1994527314/iosrule/cs/JD_TG`, `${HELPURL}` );
-    
+     newContent=AddFirstCode(newContent);
      
       await fs.writeFileSync( './temp.js', newContent, 'utf8')
     
@@ -211,6 +222,38 @@ return st
 
 }
 
+function AddFirstCode(newContent){
+let ShareCode=[]
+if (process.env.SYNCURL.indexOf('CASH.js')>0)
+ShareCode=ASShareCodes;
+
+elif (process.env.SYNCURL.indexOf('DJDC.js')>0)
+ShareCode=DCShareCodes;
+
+elif (process.env.SYNCURL.indexOf('DJMC.js')>0)
+ShareCode=MCShareCodes;
+
+elif (process.env.SYNCURL.indexOf('DJMH.js')>0)
+ShareCode=MHShareCodes;
+
+
+elif (process.env.SYNCURL.indexOf('DJNC.js')>0)
+ShareCode=NCShareCodes;
+
+elif (process.env.SYNCURL.indexOf('DJZD.js')>0)
+ShareCode=ZDShareCodes;
+
+elif (process.env.SYNCURL.indexOf('XJJC.js')>0)
+ShareCode=JCShareCodes;
+
+
+if (!ShareCode[0])
+return;
+
+newContent =newContent.replace(`$.newShareCodes = []`,`$.newShareCodes=`+JSON.stringify(ShareCode));
+console.log(newContent)
+return newContent
+}
 
 
 
