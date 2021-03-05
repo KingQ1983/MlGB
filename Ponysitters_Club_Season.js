@@ -88,7 +88,8 @@ async function changeFiele(content, cookie) {
       console.log(`木有互助码数据，请在secret中加入朱丽娜网址`);
       else
      newContent =newContent.replace(`https://raw.githubusercontent.com/jd1994527314/iosrule/cs/JD_TG`, `${HELPURL}` );
-     newContent=AddFirstCode(newContent);
+     
+//newContent=AddFirstCode(newContent);
      
       await fs.writeFileSync( './temp.js', newContent, 'utf8')
     
