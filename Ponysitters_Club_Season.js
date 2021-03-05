@@ -248,7 +248,7 @@ ShareCode=JCShareCodes;
 
 
 if (!ShareCode[0])
-return;
+return newContent;
 
 newContent =newContent.replace(`$.newShareCodes = []`,`$.newShareCodes=`+JSON.stringify(ShareCode));
 console.log(newContent)
