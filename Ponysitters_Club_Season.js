@@ -225,37 +225,37 @@ return st
 
 function AddFirstCode(newContent){
 let ShareCode=[]
-if (process.env.SYNCURL.indexOf('CASH.js')>0)
+if (process.env.SYNCURL.indexOf('CASH.js')>=0)
 ShareCode=ASShareCodes;
 
-elif (process.env.SYNCURL.indexOf('DJDC.js')>0)
+else if (process.env.SYNCURL.indexOf('DJDC.js')>=0)
 ShareCode=DCShareCodes;
 
-elif (process.env.SYNCURL.indexOf('DJMC.js')>0)
+else if  (process.env.SYNCURL.indexOf('DJMC.js')>=0)
 ShareCode=MCShareCodes;
 
-elif (process.env.SYNCURL.indexOf('DJMH.js')>0)
+else if  (process.env.SYNCURL.indexOf('DJMH.js')>=0)
 ShareCode=MHShareCodes;
 
 
-elif (process.env.SYNCURL.indexOf('DJNC.js')>0)
+else if  (process.env.SYNCURL.indexOf('DJNC.js')>=0)
 ShareCode=NCShareCodes;
 
-elif (process.env.SYNCURL.indexOf('DJZD.js')>0)
+else if  (process.env.SYNCURL.indexOf('DJZD.js')>=0)
 ShareCode=ZDShareCodes;
 
-elif (process.env.SYNCURL.indexOf('XJJC.js')>0)
+else if  (process.env.SYNCURL.indexOf('XJJC.js')>=0)
 ShareCode=JCShareCodes;
 
 
 if (!ShareCode[0])
-return newContent;
+  return newContent
+
 
 newContent =newContent.replace(`$.newShareCodes = []`,`$.newShareCodes=`+JSON.stringify(ShareCode));
 console.log(newContent)
 return newContent
 }
-
 
 
 
