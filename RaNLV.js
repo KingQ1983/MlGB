@@ -82,7 +82,7 @@ if ($.isNode()) {
    rlbodyArr = process.env.RLBODY.split('\n');
    console.log(`您选择的是用换行隔开\n`)
   } else {
-   rlbodyArr = process.env.RLBODY.split()
+   rlbodyArr = [""];
   };
     
 
