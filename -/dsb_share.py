@@ -24,6 +24,7 @@ datalist=[]
 bdlist=[]
 
 
+
 #=================================
 def Av(i,hd,k,key=''):
    print(str(k)+'=🔔='*k)
@@ -37,6 +38,7 @@ def Av(i,hd,k,key=''):
 
 def hand(userRes,k):
   try:
+     #print(userRes)
      print(str(userRes['code']))
   except Exception as e:
       print(str(e))
@@ -90,11 +92,10 @@ def start():
   global result,hd,bdlist,urllist,hdlist,datalist
   try:
    print('Localtime',datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S", ))
-   watch('dashabi_av_url',urllist)
-   watch('dashabi_hd',hdlist)
+   watch('dashabi_url_hd',urllist)
    watch('dashabi_av_bd',bdlist)
    watch('dashabi_av_data',datalist)
-   if len(urllist)==0 or len(hdlist)==0:
+   if not urllist[0] or not bdlist[0]:
       print('data is null.......')
       exit()
    data1=s(datalist[0],1)
@@ -103,16 +104,14 @@ def start():
    data4=s(datalist[3],1)
    for loop in range(10):
     for c in range(len(data4)):
-      for ii in range(len(hdlist)):
-        hd=eval(hdlist[ii])
-        print('【'+str(loop+1)+'】号:'+str(ii+1))
+        hd=eval(urllist[1])
+        print('【'+str(loop+1)+'】号:'+str(c+1))
         num=random.randint(0,len(data1))
         md5='{'+bdlist[0]+'"'+data3[num]+'",'+bdlist[1]+'"'+data4[c]+'",'+bdlist[2]+'"'+data1[num]+'",'+bdlist[3]+'"'+data2[num]+'",'+bdlist[4]+bdlist[5]+bdlist[6]+'"'+tn(32)+'",'+bdlist[7]+'"'+tn(28)+'"}'
-        for u in range(len(urllist)):
-           Av(urllist[u],hd,u+1,md5)
+        Av(urllist[0],hd,1,md5)
         print('waiting.....')
         time.sleep(random.randint(5,30))
-      time.sleep(random.randint(30,120))
+    time.sleep(random.randint(30,120))
   except Exception as e:
       print(str(e))
   print('🏆🏆🏆🏆运行完毕')
