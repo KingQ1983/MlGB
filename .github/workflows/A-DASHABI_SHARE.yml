@@ -3,8 +3,7 @@ name: A-DASHABI_SHARE
 on:
   schedule:
     - cron: '20 0-16 * * *'
-  watch:
-    types: [started]
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,6 +23,6 @@ jobs:
         run: python3 ./-/dsb_share.py
         env:
             dashabi_av_url: ${{ secrets.dashabi_av_url }}
-            dashabi_av_hd: ${{ secrets.dashabi_av_hd }}
+            dashabi_hd: ${{ secrets.dashabi_hd }}
             dashabi_av_bd: ${{ secrets.dashabi_av_bd }}
             dashabi_av_data: ${{ secrets.dashabi_av_data }}
