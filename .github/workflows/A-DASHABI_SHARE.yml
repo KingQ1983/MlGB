@@ -22,7 +22,6 @@ jobs:
       - name: '-' 
         run: python3 ./-/dsb_share.py
         env:
-            dashabi_av_url: ${{ secrets.dashabi_av_url }}
-            dashabi_hd: ${{ secrets.dashabi_hd }}
+            dashabi_hd_url: ${{ secrets.dashabi_hd_url }}
             dashabi_av_bd: ${{ secrets.dashabi_av_bd }}
             dashabi_av_data: ${{ secrets.dashabi_av_data }}
