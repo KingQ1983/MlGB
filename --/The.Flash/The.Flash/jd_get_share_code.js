@@ -19,7 +19,7 @@ cron "0 1 0/2 * *" script-path=https://gitee.com/qq34347476/quantumult-x/raw/mas
 ============小火箭=========
 获取并提交助力码 = type=cron,script-path=https://gitee.com/qq34347476/quantumult-x/raw/master/get_share_jd_code.js, cronexpr="0 35 2 1,10,20 * ?", timeout=200, enable=true
  */
-const $ = new Env('获取并格式化助力码 for Linux')
+const $ = new Env('获取并格式化助力码')
 const JD_API_HOST = 'https://api.m.jd.com/client.action'
 let cookiesArr = [],
   cookie = '',
@@ -1755,27 +1755,27 @@ function showFormatMsg() {
   //console.log(`/submit_zodiac_tempcode ${submit_zodiac_tempcode.join('&')}\n`)
 
   console.log(`\n提交机器人 @Commit Code Bot\n`)
-  //console.log(`/jdcash ${jdcash.join('&')}\n`)
+  console.log(`/jdcash ${jdcash.join('&')}\n`)
   console.log(`/jdcrazyjoy ${jdcrazyjoy.join('&')}\n`)
   //console.log(`/jdnh ${jdnh.join('&')}\n`)
   console.log(`/jdzz ${jdzz.join('&')}\n`)
   //console.log(`/jdnian ${jdnian.join('&')}\n`)
 
   console.log(`\n========== 【格式化互助码==========`)
-  formatShareCodes(hqtzs, '环球挑战赛(2.22)', 'MyGlobal', 'ForOtherGlobal')
+  //formatShareCodes(hqtzs, '环球挑战赛(2.22)', 'MyGlobal', 'ForOtherGlobal')
   formatShareCodes(submit_bean_code, '种豆得豆', 'MyBean', 'ForOtherBean')
   formatShareCodes(submit_farm_code, '东东农场', 'MyFruit', 'ForOtherFruit')
   formatShareCodes(submit_pet_code, '东东萌宠', 'MyPet', 'ForOtherPet')
   formatShareCodes(submit_jxfactory_code,'京喜工厂','MyDreamFactory','ForOtherDreamFactory')
   formatShareCodes(submit_ddfactory_code,'东东工厂','MyJdFactory','ForOtherJdFactory')
-  //formatShareCodes(jdcash, '签到领现金', 'MyCash', 'ForOtherCash')
+  formatShareCodes(jdcash, '签到领现金', 'MyCash', 'ForOtherCash')
   formatShareCodes(jdcrazyjoy, 'crazy joy', 'MyJoy', 'ForOtherJoy')
   formatShareCodes(jdSgmh, '闪购盲盒', 'MySgmh', 'ForOtherSgmh')
 }
 
 async function getShareCodeAndAdd() {
   console.log(`======账号${$.index}开始======`)
-  await getGlobal()
+  //await getGlobal()
   await getJdFactory() // 东东工厂
   await getJxFactory() // 京喜工厂
   await getJxNc() // 京喜农场
@@ -1786,7 +1786,7 @@ async function getShareCodeAndAdd() {
   await getJoy() // CrazyJoy
   //await getJdNS() // 年兽
   //await getJdNH() // 京东年货
-  //await getJDCase() // 京东签到领现金
+  await getJDCase() // 京东签到领现金
   await getSgmh() // 闪购盲盒
   console.log(`======账号${$.index}结束======\n`)
 }
