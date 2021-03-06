@@ -2,7 +2,7 @@ name: A-DASHABI_SHARE
 
 on:
   schedule:
-    - cron: '20 0-16 * * *'
+    - cron: '20 22,23,0-16 * * *'
   workflow_dispatch:
 jobs:
   build:
