@@ -92,7 +92,7 @@ def start():
   global result,hd,bdlist,urllist,hdlist,datalist
   try:
    print('Localtime',datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S", ))
-   watch('dashabi_url_hd',urllist)
+   watch('dashabi_hd_url',urllist)
    watch('dashabi_av_bd',bdlist)
    watch('dashabi_av_data',datalist)
    if not urllist[0] or not bdlist[0]:
