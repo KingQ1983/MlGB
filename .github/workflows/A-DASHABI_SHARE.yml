@@ -1,0 +1,29 @@
+name: A-DASHABI_SHARE
+
+on:
+  schedule:
+    - cron: '20 0-16 * * *'
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.txt 
+        
+      - name: '-' 
+        run: python3 ./-/dsb_share.py
+        env:
+            dashabi_av_url: ${{ secrets.dashabi_av_url }}
+            dashabi_av_hd: ${{ secrets.dashabi_av_hd }}
+            dashabi_av_bd: ${{ secrets.dashabi_av_bd }}
+            dashabi_av_data: ${{ secrets.dashabi_av_data }}
