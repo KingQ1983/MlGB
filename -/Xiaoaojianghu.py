@@ -32,9 +32,9 @@ acount=10
 
 liveflag=True
 
-djj_bark_cookie=''
+xmly_bark_cookie=''
 djj_tele_cookie=''
-djj_sever_jiang=''
+
 
 
 
@@ -221,9 +221,9 @@ def allinbd(alllist,liveId=0):
 def pushmsg(title,txt,bflag=1,wflag=1,tflag=1):
    txt=urllib.parse.quote(txt)
    title=urllib.parse.quote(title)
-   if bflag==1 and djj_bark_cookie.strip():
+   if bflag==1 and xmly_bark_cookie.strip():
       print("\n【通知汇总】")
-      purl = f'''https://api.day.app/{djj_bark_cookie}/{title}/{txt}'''
+      purl = f'''https://api.day.app/{xmly_bark_cookie}/{title}/{txt}'''
       response = requests.post(purl)
       #print(response.text)
    if tflag==1 and djj_tele_cookie.strip():
@@ -235,15 +235,6 @@ def pushmsg(title,txt,bflag=1,wflag=1,tflag=1):
 
       response = requests.get(turl)
       #print(response.text)
-   if wflag==1 and djj_sever_jiang.strip():
-      print("\n【微信消息】")
-      purl = f'''http://sc.ftqq.com/{djj_sever_jiang}.send'''
-      headers={
-    'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'
-    }
-      body=f'''text={txt})&desp={title}'''
-      response = requests.post(purl,headers=headers,data=body)
-      print(response.text)
 
 
 
