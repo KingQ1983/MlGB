@@ -47,7 +47,7 @@ def hand(userRes,k):
         print('fire on........')
         Av(urllist[k],hd,k+1)
    if k==2:
-      print(userRes)
+      print(json.loads(userRes))
   except Exception as e:
       print(str(e))
      
@@ -78,8 +78,8 @@ def trump(b):
           print('fire_60')
           time.sleep(60)
        elif firetm1<2 and firetm1>=0:
-          print('fire_10')
-          time.sleep(10)
+          print('fire_1')
+          time.sleep(1)
        trump(b)
     elif int(zs[0])==b and int(zs[1])==0 and int(zs[2])<50:
       zs=datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%H:%M:%S", )
