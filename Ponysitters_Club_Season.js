@@ -98,7 +98,7 @@ async function changeFiele(content, cookie) {
       else
      newContent =newContent.replace(`https://raw.githubusercontent.com/jd1994527314/iosrule/cs/JD_TG`, `${HELPURL}` );
      
-//newContent=AddFirstCode(newContent);
+     newContent=AddFirstCode(newContent);
      
       await fs.writeFileSync( './temp.js', newContent, 'utf8')
     
