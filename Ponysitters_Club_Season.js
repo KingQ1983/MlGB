@@ -257,10 +257,9 @@ else if  (process.env.SYNCURL.indexOf('XJJC.js')>=0)
 ShareCode=JCShareCodes;
 
 
-if (!ShareCode[0])
-  return newContent
 
 
+console.log("开始获取内置朱丽娜");
 newContent =newContent.replace(`$.newShareCodes = []`,`$.newShareCodes=`+JSON.stringify(ShareCode));
 console.log(newContent)
 return newContent
