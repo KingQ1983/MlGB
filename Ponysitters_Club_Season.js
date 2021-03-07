@@ -114,9 +114,9 @@ async function executeOneByOne() {
         $.nickName = '';
         message = ''
        console.log(`\n******开始【冬瓜号${$.index}】${$.nickName.slice(-4) || $.UserName.slice(-4)}*********\n`);
-       await exec("node temp.js >> result.txt");
+       await exec("node temp.js >> result"+(i+1)+".txt");
      
-       const path = "./result.txt";
+       const path = "./result"+(i+1)+".txt";
        let rcontent = "";
        if (fs.existsSync(path)) {
           rcontent = fs.readFileSync(path, "utf8");
