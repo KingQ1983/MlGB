@@ -88,7 +88,7 @@ def trump(b):
           print('fire_1')
           time.sleep(1)
        trump(b)
-    elif int(zs[0])==int(b.split(':')[0]) and int(zs[1])<b2 :
+    elif int(zs[0])==int(b.split(':')[0]) and int(zs[1])<(b2-60) :
       print('M----->>>>>>>')
       zs=datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%H:%M:%S", )
       print('go.....'+zs)
@@ -98,7 +98,7 @@ def trump(b):
       print('ss_fireon'+str(ss))
       time.sleep(ss)
       trump(b)
-    elif int(zs[0])==int(b.split(':')[0]) and int(zs[1])==b2 and int(zs[2])<30:
+    elif int(zs[0])==int(b.split(':')[0]) and int(zs[1])==(b2-60) and int(zs[2])<30:
       print('S----->>>>>>>')
       zs=datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%H:%M:%S", )
       print('.....'+zs)
