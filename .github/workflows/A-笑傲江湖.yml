@@ -25,6 +25,7 @@ jobs:
         run: python3 ./-/Xiaoaojianghu.py 
         env:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            xmly_bark_cookie: ${{ secrets.xmly_bark_cookie }}
             xb_main_url: ${{ secrets.xb_main_url }}
             xb_main_hd: ${{ secrets.xb_main_hd }}
             xb_main_bd: ${{ secrets.xb_main_bd }}
