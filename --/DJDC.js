@@ -210,7 +210,7 @@ function showMsg() {
     } else {
       $.log(`京东账号${$.index}${$.nickName}\n${message}`);
     }
-    if (new Date().getHours() === 12) {
+    if (new Date().getHours() === 4 || new Date().getHours() === 8 || new Date().getHours() === 0 ) {
       $.msg($.name, '', `${message}`);
     }
     resolve()
