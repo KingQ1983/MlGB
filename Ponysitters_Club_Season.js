@@ -260,8 +260,9 @@ ShareCode=JCShareCodes;
 
 
 console.log("开始获取内置朱丽娜");
+console.log(ShareCode)
 newContent =newContent.replace(`$.newShareCodes = []`,`$.newShareCodes=`+JSON.stringify(ShareCode));
-console.log(newContent)
+
 return newContent
 }
 
