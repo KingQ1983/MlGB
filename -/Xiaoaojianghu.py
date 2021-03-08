@@ -141,6 +141,15 @@ def hand(userRes,k,l):
 
 def watch(flag,list):
    vip=''
+   global xmly_bark_cookie
+   global djj_sever_jiang
+   global djj_tele_cookie
+   if "XMLY_BARK_COOKIE" in os.environ:
+      xmly_bark_cookie =os.environ["XMLY_BARK_COOKIE"]
+   if "DJJ_TELE_COOKIE" in os.environ:
+      djj_tele_cookie = os.environ["DJJ_TELE_COOKIE"]
+   if "DJJ_SEVER_JIANG" in os.environ:
+      djj_sever_jiang = os.environ["DJJ_SEVER_JIANG"]
    if flag in os.environ:
       vip = os.environ[flag]
    if flag in osenviron:
@@ -156,7 +165,43 @@ def watch(flag,list):
        exit()
 
 
+   
+def pushmsg(title,txt,bflag=1,wflag=1,tflag=1):
+   try:
+     txt=urllib.parse.quote(txt)
+     title=urllib.parse.quote(title)
+     if bflag==1 and xmly_bark_cookie.strip():
+         print("\n【Bark通知】")
+         purl = f'''https://api.day.app/{xmly_bark_cookie}/{title}/{txt}'''
+         response = requests.post(purl)
+   except Exception as e:
+      print(str(e))
+   try:
+     if tflag==1 and djj_tele_cookie.strip():
+         print("\n【Telegram消息】")
+         id=djj_tele_cookie[djj_tele_cookie.find('@')+1:len(djj_tele_cookie)]
+         botid=djj_tele_cookie[0:djj_tele_cookie.find('@')]
 
+         turl=f'''https://api.telegram.org/bot{botid}/sendMessage?chat_id={id}&text={title}\n{txt}'''
+
+         response = requests.get(turl,timeout=5)
+   except Exception as e:
+      print(str(e))
+   try:
+     if wflag==1 and djj_sever_jiang.strip():
+        print("\n【微信消息】")
+        purl = f'''http://sc.ftqq.com/{djj_sever_jiang}.send'''
+        headers={'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
+        body=f'''text={txt})&desp={title}'''
+        response = requests.post(purl,headers=headers,data=body)
+   except Exception as e:
+      print(str(e))
+def loger(m):
+  # print(m)
+   global result
+   result +=m     
+   
+   
 def clock(func):
     def clocked(*args, **kwargs):
         t0 = timeit.default_timer()
@@ -218,32 +263,10 @@ def allinbd(alllist,liveId=0):
       #print(body3)
       print(str(actId1),str(actId2),str(actId3))
    
-def pushmsg(title,txt,bflag=1,wflag=1,tflag=1):
-   txt=urllib.parse.quote(txt)
-   title=urllib.parse.quote(title)
-   if bflag==1 and xmly_bark_cookie.strip():
-      print("\n【通知汇总】")
-      purl = f'''https://api.day.app/{xmly_bark_cookie}/{title}/{txt}'''
-      response = requests.post(purl)
-      #print(response.text)
-   if tflag==1 and djj_tele_cookie.strip():
-      print("\n【Telegram消息】")
-      id=djj_tele_cookie[djj_tele_cookie.find('@')+1:len(djj_tele_cookie)]
-      botid=djj_tele_cookie[0:djj_tele_cookie.find('@')]
-
-      turl=f'''https://api.telegram.org/bot{botid}/sendMessage?chat_id={id}&text={title}\n{txt}'''
-
-      response = requests.get(turl)
-      #print(response.text)
 
 
 
 
-
-def loger(m):
-   global result
-   #print(result)
-   result +=m
 @clock
 def start():
    global result,hd,body1,body2,body3,body4,prosecutor
