@@ -142,14 +142,11 @@ def hand(userRes,k,l):
 def watch(flag,list):
    vip=''
    global xmly_bark_cookie
-   global djj_sever_jiang
    global djj_tele_cookie
    if "XMLY_BARK_COOKIE" in os.environ:
       xmly_bark_cookie =os.environ["XMLY_BARK_COOKIE"]
    if "DJJ_TELE_COOKIE" in os.environ:
       djj_tele_cookie = os.environ["DJJ_TELE_COOKIE"]
-   if "DJJ_SEVER_JIANG" in os.environ:
-      djj_sever_jiang = os.environ["DJJ_SEVER_JIANG"]
    if flag in os.environ:
       vip = os.environ[flag]
    if flag in osenviron:
@@ -187,15 +184,7 @@ def pushmsg(title,txt,bflag=1,wflag=1,tflag=1):
          response = requests.get(turl,timeout=5)
    except Exception as e:
       print(str(e))
-   try:
-     if wflag==1 and djj_sever_jiang.strip():
-        print("\n【微信消息】")
-        purl = f'''http://sc.ftqq.com/{djj_sever_jiang}.send'''
-        headers={'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
-        body=f'''text={txt})&desp={title}'''
-        response = requests.post(purl,headers=headers,data=body)
-   except Exception as e:
-      print(str(e))
+   
 def loger(m):
   # print(m)
    global result
