@@ -28,7 +28,7 @@ tklist=[]
 actId1=''
 actId2=''
 actId3=''
-acount=10
+acount=6
 
 liveflag=True
 
