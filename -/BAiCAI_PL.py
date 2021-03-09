@@ -54,7 +54,7 @@ def kindapretty():
       tasks_active()
       tasks_rewardad()
       print('...waiting20')
-      time.sleep(30)
+      time.sleep(20)
       tasks_complete()
       print('...waiting7')
       time.sleep(7)
@@ -65,7 +65,7 @@ def kindapretty():
    chestDouble_active()
    chestDouble_rewardad()
    print('...waiting')
-   time.sleep(30)
+   time.sleep(20)
    chestDouble_complete()
   except Exception as e:
       print(str(e))
