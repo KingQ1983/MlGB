@@ -1,0 +1,29 @@
+name: A-大王叫我来巡山.yml
+
+on:
+  schedule:
+    - cron: '15 0 * * *'
+  #watch:
+    #types: [started]
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT 
+        
+      - name: '大王叫我来巡山' 
+        run: python3 ./-/DaWangLaiXunShan.py
+        env:
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            xmly_bark_cookie: ${{ secrets.xmly_bark_cookie }}
+            wx_dawang_body: ${{ secrets.wx_dawang_body }}
