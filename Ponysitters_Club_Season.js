@@ -62,25 +62,23 @@ let ZDShareCodes=[""];//种豆
 let ASShareCodes=[""];//签到领现金
 
 
-DCShareCodes=["T0205KkcMVdsowKfWEOA8ahSCjVWnYaS5kRrbA","T022a3rml4aiLcpZ-IRlTV6YdQCjVWnYaS5kRrbA","T0205KkcNEBKggCmYE-X8aF4CjVWnYaS5kRrbA","T0205KkcOnh4piyfUli80KRuCjVWnYaS5kRrbA","T0205KkcOUd8nAuWama06693CjVWnYaS5kRrbA",""];//京东工厂
+DCShareCodes=["T0205KkcMVdsowKfWEOA8ahSCjVWnYaS5kRrbA","T022a3rml4aiLcpZ-IRlTV6YdQCjVWnYaS5kRrbA","T0205KkcNEBKggCmYE-X8aF4CjVWnYaS5kRrbA","T0205KkcOnh4piyfUli80KRuCjVWnYaS5kRrbA","T0205KkcOUd8nAuWama06693CjVWnYaS5kRrbA","T011_aUiHE9QqAUCjVWnYaS5kRrbA"];//京东工厂
 
 JCShareCodes=["Q0VdTSuur3SLeSSfOW2A2Q==","v6859vuzm0wJDBqu2J9Shg==","dr9FS50xxupUafarZE8eVw=='","03d2cc97d77b45d799877a747638c8b0"];//惊喜工厂
 
-NCShareCodes=["268e797816f340bc9ad3656fa249d1a6","ae6488dc5f0c4669bfa432b9bc884191","cd9c333af0bd4a118c606a251868d427","03d2cc97d77b45d799877a747638c8b0","4ccc103e768c4ee4ad3cc81f4c3e32d7","6b20f5a4b2d1433b98afee5a4bd3cd2d","632693a86dc246d0940d9f0014d4b18f"];//东东农场
+NCShareCodes=["268e797816f340bc9ad3656fa249d1a6","ae6488dc5f0c4669bfa432b9bc884191","cd9c333af0bd4a118c606a251868d427","03d2cc97d77b45d799877a747638c8b0","4ccc103e768c4ee4ad3cc81f4c3e32d7","6b20f5a4b2d1433b98afee5a4bd3cd2d","632693a86dc246d0940d9f0014d4b18f","b6ec9f9d062247929de179bb6e541096"];//东东农场
 
 
-MCShareCodes=["MTAxODExNDYxMTEwMDAwMDAwMzk4NzYxOTc=","MTAxODExNDYxMTEwMDAwMDAwNDA1NDQwNzE=","MTE1NDAxNzgwMDAwMDAwNDI3NDEyMDc=","MTE1NDQ5OTIwMDAwMDAwNDUwNDUxOTc=","MTE1NDUwMTI0MDAwMDAwMDQ1MDg1OTkx","MTE1NDAxNzgwMDAwMDAwNDUwODY5ODU="];//萌宠
+MCShareCodes=["MTAxODExNDYxMTEwMDAwMDAwMzk4NzYxOTc=","MTAxODExNDYxMTEwMDAwMDAwNDA1NDQwNzE=","MTE1NDAxNzgwMDAwMDAwNDI3NDEyMDc=","","",""];//萌宠
 
 
-MHShareCodes=["T0205KkcG01tji2_VliVw6ZQCjVWmIaW5kRrbA","T0205KkcMVdsowKfWEOA8ahSCjVWmIaW5kRrbA","MT022a3rml4aiLcpZ-IRlTV6YdQCjVWmIaW5kRrbA","T0205KkcIV9wsAOsd0Gs9apiCjVWmIaW5kRrbA","T0205KkcNEBKggCmYE- X8aF4CjVWmIaW5kRrbA","T0205KkcOnh4piyfUli80KRuCjVWmIaW5kRrbA","T0205KkcOUd8nAuWama06693CjVWmIaW5kRrbA"];//京东盲盒
+MHShareCodes=["T0205KkcG01tji2_VliVw6ZQCjVWmIaW5kRrbA","T0205KkcMVdsowKfWEOA8ahSCjVWmIaW5kRrbA","MT022a3rml4aiLcpZ-IRlTV6YdQCjVWmIaW5kRrbA","T0205KkcIV9wsAOsd0Gs9apiCjVWmIaW5kRrbA","T0205KkcNEBKggCmYE- X8aF4CjVWmIaW5kRrbA","T0205KkcOnh4piyfUli80KRuCjVWmIaW5kRrbA","T0205KkcOUd8nAuWama06693CjVWmIaW5kRrbA","T011_aUiHE9QqAUCjVWmIaW5kRrbA"];//京东盲盒
 
 
-ZDShareCodes= ["7oivz2mjbmnx4bddymkpj42u75jmba2c6ga6eba","2vgtxj43q3jqzr2i5ac4uj2h6wxl66n4i326u3i","","rtsljotwy2w35aybpd23k55gta2uz3tlbgt7osy","ebxm5lgxoknqdcur7hjdy67t5475pzsaprcp5my","eeexxudqtlamp7utxeywyr2gmhltygosadewozy","mnmamd3ukiwrkybejwn7w5 bx3dvy2y63rsmvwq"];//种豆
+ZDShareCodes= ["7oivz2mjbmnx4bddymkpj42u75jmba2c6ga6eba","2vgtxj43q3jqzr2i5ac4uj2h6wxl66n4i326u3i","","rtsljotwy2w35aybpd23k55gta2uz3tlbgt7osy","ebxm5lgxoknqdcur7hjdy67t5475pzsaprcp5my","eeexxudqtlamp7utxeywyr2gmhltygosadewozy","mnmamd3ukiwrkybejwn7w5 bx3dvy2y63rsmvwq","fs3yda53gkbythw4dkjxnuees4"];//种豆
 
 
 ASShareCodes=["ASeU9YHaXHMKpuiTehrixL", "AS9pyiu3QJvmKoKfBEEtqB1w","ASeU9YN7_GHYVOhyy0nCJJ"];//签到领现金
-
-
 //格式["AA","BB","CC"]
 
 //当前互助码活动(动态更新中):['NC@京东农场', 'AS@签到领现金', 'MC@萌宠', 'JC@惊喜工厂', 'DC@京东工厂', 'ZD@种豆', 'MH@盲盒']
