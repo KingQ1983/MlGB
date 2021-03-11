@@ -23,4 +23,5 @@ jobs:
         run: python3 ./-/Fenji.py
         env:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            XMLY_BARK_COOKIE: ${{ secrets.XMLY_BARK_COOKIE }}
             airplay_data: ${{ secrets.airplay_data }}
