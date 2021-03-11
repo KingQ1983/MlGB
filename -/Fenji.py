@@ -25,8 +25,6 @@ djj_tele_cookie=''
 
 
 
-
-
 def Av(i,hd,k,o,key=''):
    
    print(str(k)+'=🔔='*k)
@@ -161,15 +159,20 @@ def start():
   try:
    print('Localtime',datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S", ))
    watch('airplay_data',urllist)
-   hd=eval(urllist[1])
-   if not urllist[0] or not urllist[1]:
+   
+   if len(urllist)==0:
       print('data is null.......')
       exit()
+   hd=eval(urllist[1])
    Av(urllist[0]+'/checkin',hd,1,1)
    Av(urllist[0],hd,2,0)
    result+='\n'
-   print(result)
-   pushmsg('机场签到',result)
+   #print(result)
+   pushmsg('机场签到',result,0,0,1)
+   result=result[0:result.find('【订阅')]
+   pushmsg('机场签到',result,1,0,0)
+   
+   
   except Exception as e:
       print(str(e))
   print('🏆🏆🏆🏆运行完毕')
