@@ -170,7 +170,7 @@ def start():
       time.sleep(5)
       result+='\n'
    #print(result)
-   pushmsg('二库-BB傻逼的app',result)
+   pushmsg('步步高学习机',result)
   except Exception as e:
       print(str(e))
   print('🏆🏆🏆🏆运行完毕')
