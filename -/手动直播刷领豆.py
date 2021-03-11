@@ -12,7 +12,7 @@ from dateutil import tz
 
 
 
-Game_Name='京东直播手动获取京豆'
+Game_Name='京东直播手动获取京豆\n'
 
 
 
@@ -64,7 +64,7 @@ def JdDlive():
      
      liveDrawLotteryV842()
      
-     showMsg()
+     
 	
 	
    except Exception as e:
