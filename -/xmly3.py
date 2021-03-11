@@ -23,18 +23,9 @@ cookies2 = {
 
 
 cookiesList = []
-
 xmly_speed_cookie =''
-
 xmly_bark_cookie=''
-
-TG_BOT_TOKEN =''
-TG_USER_ID =''
-cookiesList = []
-
-
-
-
+djj_tele_cookie=''
 iosrule=''
 def str2dict(str_cookie):
     if type(str_cookie) == dict:
@@ -860,12 +851,15 @@ def pushmsg():
     purl = f'https://api.day.app/{xmly_bark_cookie}/xmly/{iosrule}'
     response = requests.post(purl)
     #print(response.text)
-  if TG_BOT_TOKEN.strip() and TG_USER_ID.strip():
-    print("\n【Telegram消息】")
-    purl =f'''https://api.telegram.org/bot{TG_BOT_TOKEN}/sendMessage?chat_id={TG_USER_ID}&text=xmly\n{iosrule}'''
-    response = requests.post(purl)
-    #print(response.text)
+  if djj_tele_cookie.strip():
+     print("\n【Telegram消息】")
+     id=djj_tele_cookie[djj_tele_cookie.find('@')+1:len(djj_tele_cookie)]
+     botid=djj_tele_cookie[0:djj_tele_cookie.find('@')]
 
+     purl=f'''https://api.telegram.org/bot{botid}/sendMessage?chat_id={id}&text={title}\n{txt}'''
+
+     response = requests.get(purl,timeout=5)
+         
 
 def checkin(cookies,uid):
     print("\n【连续签到】")
@@ -965,8 +959,7 @@ def start():
   pushmsg()
 
 
-def main_handler(event, context):
-    return start()
+
 
 if __name__ == '__main__':
        start()
