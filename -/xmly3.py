@@ -854,7 +854,7 @@ def pushmsg():
      id=djj_tele_cookie[djj_tele_cookie.find('@')+1:len(djj_tele_cookie)]
      botid=djj_tele_cookie[0:djj_tele_cookie.find('@')]
 
-     purl=f'''https://api.telegram.org/bot{botid}/sendMessage?chat_id={id}&text={title}\n{txt}'''
+     purl=f'''https://api.telegram.org/bot{botid}/sendMessage?chat_id={id}&text=XMLY\n{iosrule}'''
 
      response = requests.get(purl,timeout=5)
          
