@@ -17,7 +17,7 @@ Game_Name='京东直播手动获取京豆\n'
 
 
 
-JD_API_HOST ='https://api.m.jd.com/client.action?functionId=liveDrawLotteryV842&body=%7B%22lotteryId%22%3A668426%2C%22liveId%22%3A3614640%7D&uuid=8888888&client=apple&clientVersion=9.4.1&st=1615470930003&sign=b54bee1a186ebcef01c9bb3d8ffec228&sv=102&'
+JD_API_HOST = 'https://api.m.jd.com/client.action?functionId=liveDrawLotteryV842&body=%7B%22lotteryId%22%3A667624%2C%22liveId%22%3A3576206%7D&uuid=8888888&client=apple&clientVersion=9.4.1&st=1615456616059&sign=22d845d5daf2d049a4cdf697bede2194&sv=121&'
 #手动输入地址
 
 
@@ -223,8 +223,9 @@ def start():
         result+=f'''【京东账号{index}】{nickName}\n '''
         JdDlive()
         result+='\n'
-   print(result)
-   pushmsg(Game_Name,result)
+        print(result)
+        pushmsg(Game_Name,result)
+        time.sleep(3)
     
     
    
