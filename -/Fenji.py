@@ -19,7 +19,7 @@ btlist=[]
 bdlist=[]
 
 
-djj_bark_cookie=''
+xmly_bark_cookie=''
 
 djj_tele_cookie=''
 
@@ -89,15 +89,12 @@ def hand(userRes,k):
 
 def watch(flag,list):
    vip=''
-   global djj_bark_cookie
-   global djj_sever_jiang
+   global xmly_bark_cookie
    global djj_tele_cookie
-   if "DJJ_BARK_COOKIE" in os.environ:
-      djj_bark_cookie = os.environ["DJJ_BARK_COOKIE"]
+   if "XMLY_BARK_COOKIE" in os.environ:
+      xmly_bark_cookie = os.environ["XMLY_BARK_COOKIE"]
    if "DJJ_TELE_COOKIE" in os.environ:
       djj_tele_cookie = os.environ["DJJ_TELE_COOKIE"]
-   if "DJJ_SEVER_JIANG" in os.environ:
-      djj_sever_jiang = os.environ["DJJ_SEVER_JIANG"]
    if flag in os.environ:
       vip = os.environ[flag]
    if flag in osenviron:
@@ -123,9 +120,9 @@ def pushmsg(title,txt,bflag=1,wflag=1,tflag=1):
    try:
      txt=urllib.parse.quote(txt)
      title=urllib.parse.quote(title)
-     if bflag==1 and djj_bark_cookie.strip():
+     if bflag==1 and xmly_bark_cookie.strip():
          print("\n【Bark通知】")
-         purl = f'''https://api.day.app/{djj_bark_cookie}/{title}/{txt}'''
+         purl = f'''https://api.day.app/{xmly_bark_cookie}/{title}/{txt}'''
          response = requests.post(purl)
    except Exception as e:
       print(str(e))
@@ -171,7 +168,7 @@ def start():
    Av(urllist[0]+'/checkin',hd,1,1)
    Av(urllist[0],hd,2,0)
    result+='\n'
-   #print(result)
+   print(result)
    pushmsg('机场签到',result)
   except Exception as e:
       print(str(e))
