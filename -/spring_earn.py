@@ -323,7 +323,7 @@ def clock(func):
 def start():
    global result,bd
    print('Localtime',datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S", ))
-   watch('spring_earn_body',cklist)
+   watch('SPRING_EARN_BODY',cklist)
    j=0
    for count in cklist:
      j+=1
