@@ -264,9 +264,7 @@ def self_read(readid):
          print(f'''complete.....\n''')
        else:
          print(f'''complete.....{Res['message']}\n''')
-       if ii==5:
-         msg+='本次完成阅读5篇'
-         print('\n task competed=======')
+       print('\n task competed=======')
        rm=random.randint(55,70)
        print(f'''waiting.....{rm}s\n''')
        time.sleep(rm)
@@ -368,7 +366,7 @@ def start():
      header['Authorization']=count
      spring_earn()
      result+='\n'
-     #print(result)
+     print(result)
    pushmsg(Gamename,result)
 
 if __name__ == '__main__':
