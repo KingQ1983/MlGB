@@ -368,7 +368,7 @@ def start():
      header['Authorization']=count
      spring_earn()
      result+='\n'
-     print(result)
+     #print(result)
    pushmsg(Gamename,result)
 
 if __name__ == '__main__':
