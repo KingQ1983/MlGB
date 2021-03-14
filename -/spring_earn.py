@@ -33,6 +33,8 @@ header={"Accept": "*/*","Accept-Encoding": "gzip, deflate","Accept-Language": "z
 
 def spring_earn():
    getuser()
+   
+   self_readlist()
    self_task_info()
    
    getsigninfo()
@@ -51,8 +53,6 @@ def spring_earn():
    time.sleep(1)
    task_award(5)
    treasure_box_gain()
-   self_readlist()
-   self_read()
    getsigninfo(1)
 def getuser():
    print('\n getuser')
@@ -61,11 +61,10 @@ def getuser():
      
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/user',headers=header)
      Res=response.json()
-     print(Res)
      if Res['code']==200:
        msg+=Res['data']['nick_name']+'|累计收入'+Res['data']['total_gain']+'|今日收入'+Res['data']['today_gain']+'|转发收入'+Res['data']['forward_gain']+'|现金余额'+Res['data']['balance']+'|'
    except Exception as e:
-      print(str(e))
+      msg=str(e)
    loger(msg)
 
 
@@ -94,7 +93,7 @@ def self_task_info():
            
        
    except Exception as e:
-      print(str(e))
+      msg=str(e)
    print(msg)
       
 
@@ -119,7 +118,7 @@ def getsigninfo(flag=0):
         msg+='金币余额'+str(Res['data']['gold_balance'])+'|'
         msg+='今日金币'+str(Res['data']['today_gold_gain'])
    except Exception as e:
-      print(str(e))
+      msg=str(e)
    loger(msg)
 
 
@@ -146,8 +145,8 @@ def treasure_box_gain():
      
      
    except Exception as e:
-      print(str(e))
-      
+      msg=str(e)
+      print(msg)
       
       
       
@@ -199,57 +198,44 @@ def task_do(item_id,task_type):
 def self_readlist():
    print('\n self_readlist')
    try:
-     global readidlist
-     msg=''
-     for i in range(19):
-       response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/article/list?city_type=1&page=4&slide='+str(i)+'&tag_id='+str(i)+'&type=1',headers=header)
-       Res=response.json()
-     #print(Res)
-       if Res['code']==200:
-          for id in Res['data']['top_list']:
-            readidlist.append(id['id'])
-          for id in Res['data']['list']:
-            readidlist.append(id['id'])
-     #print(readidlist)
+    msg=''
+    for i in range(10):
+     print(str(i+1)+'🔔')
+     response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/article/list?city_type=1&page='+str(random.randint(1,500))+'&slide='+str(random.randint(1,500))+'&tag_id=0&type=1',headers=header,timeout=60)
+     Res=response.json()
+     
+     if Res['code']==200:
+          time.sleep(1)
+          self_read(Res['data']['list'][0]['id'])
+     else:
+        print('reading data ❌')
+        break 
+     time.sleep(60)
    except Exception as e:
-      print(str(e))
+      msg=str(e)
    print(msg)
       
       
-def self_read():
+def self_read(readid):
    print('\n self_read')
    try:
-     msg='号码正常|'
-     randlist=[]
-     if len(readidlist)==0:
-        return
-     for i in range(10):
-        randlist.append(random.choice(readidlist))
-     print(randlist)
-     ii=0
-     for readid in randlist:
-       ii+=1
-     if len(readidlist)==0:
-        return
-     ii=0
-     for readid in readidlist:
-       ii+=1
-       
+       msg='号码正常|'
+       print('read===='+str(readid))
        response = requests.get('http://cf-api.douzhuanapi.cn:10002/h5/article/article_detail?article_id='+str(readid),headers=header)
        Res=response.json()
+       
        if Res['code']==200:
-         print(f'''【{ii}】loading.....\n''')
+         print(f'''loading article.....{Res['data']['article']['title']}\n''')
        else:
-         print(f'''【{ii}】loading.....❌\n''')
-         
+         print(f'''loading.....❌\n''')
        bd='ad_source=1&location=3&position=8&report_type=1'
        response = requests.post('http://cf-api.douzhuanapi.cn:10002/api/ad_sense/report',headers=header,data=bd)
        Res=response.json()
        print(Res)
        if Res['code']==200:
-         print(f'''【{ii}】upload.....{Res['data']}\n''')
+         print(f'''upload.....{Res['data']}\n''')
        else:
-         print(f'''【{ii}】upload.....❌|n''')
+         print(f'''upload.....❌|n''')
          
          
        rm=30
@@ -260,9 +246,9 @@ def self_read():
        Res=response.json()
        print(Res)
        if Res['code']==200:
-         print(f'''【{ii}】awarding.....\n''')
+         print(f'''awarding.....\n''')
        if Res['code']==422:
-         print(f'''【{ii}】awarding.....{Res['message']}\n''')
+         print(f'''awarding.....{Res['message']}\n''')
          if Res['message'].find('系统')>=0:
            msg+='号码变黑，明天再来'
            bd='ad_source=1&location=3&position=8&report_type=1'
@@ -275,18 +261,17 @@ def self_read():
        Res=response.json()
        print(Res)
        if Res['code']==200:
-         print(f'''【{ii}】complete.....\n''')
+         print(f'''complete.....\n''')
        else:
-         print(f'''【{ii}】complete.....{Res['message']}\n''')
+         print(f'''complete.....{Res['message']}\n''')
        if ii==5:
          msg+='本次完成阅读5篇'
          print('\n task competed=======')
-         break
-       rm=random.randint(60,80)
-       print(f'''【{ii}】waiting.....{rm}s\n''')
+       rm=random.randint(55,70)
+       print(f'''waiting.....{rm}s\n''')
        time.sleep(rm)
    except Exception as e:
-      print(str(e))
+      msg=str(e)
    loger(msg)
     
 
@@ -377,11 +362,13 @@ def start():
    j=0
    for count in cklist:
      j+=1
+     #if j!=1:
+      #continue
      result+='【'+str(j)+'】'
      header['Authorization']=count
      spring_earn()
      result+='\n'
-     #print(result)
+     print(result)
    pushmsg(Gamename,result)
 
 if __name__ == '__main__':
