@@ -24,7 +24,7 @@ with_bd=''
 tm_bd=''
 yuan1_bd=''
 
-tmlong=30
+tmlong=1
 
 sign_bdlist=[]
 video_bdlist=[]
@@ -48,7 +48,7 @@ header={"Accept": "application/json, text/plain, */*","Accept-Encoding": "gzip, 
 
 
 
-#签到
+
 def spring_earn():
    
    boxTask()
@@ -244,7 +244,7 @@ def start():
      userId=IDARY[i]
      spring_earn()
      result+='\n'
-     #print(result)
+     print(result)
    pushmsg(Gamename,result)
 
 if __name__ == '__main__':
