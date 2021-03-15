@@ -84,20 +84,25 @@ let phoneModel=['iPhone XR','iPhone 7 Plus','iPhone 6s Plus','iPhone SE','iPad m
   
 if ($.isNode()) {
    cfzhdArr=[];
-if (process.env.CFZHD && process.env.CFZHD.indexOf('\n') > -1) {
+if (process.env.CFZHD && process.env.CFZHD.indexOf('\n') > -1) 
    acsecret = process.env.CFZHD.split('\n');
-   
-  }}
-
-
-
-
+   else
+acsecret = process.env.CFZHD.split();
+  }
 
 for (let i = 2; i <= cfzcount; i++) {
     cfzurlArr.push($.getdata(`cfzurl${i}`))
     cfzhdArr.push($.getdata(`cfzhd${i}`))
     cfzsbhdArr.push($.getdata(`cfzsbhd${i}`))
   }
+
+acsecret=["Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDRhY2RiODBiMDA2IiwiaWF0IjoxNjE1NTE1MDY0LCJuYmYiOjE2MTU1MTUwNjQsImV4cCI6MTYxODEwNzA2NCwidWlkIjoxMjEzNTc4LCJuYW1lIjoiXHU1ZTA1XHU1ZmI3XHU1MzVjXHU1MzVjXHU1ZmI3IiwiY3JlYXRlZF9hdCI6IjIwMjEtMDMtMTIgMTA6MTE6MDQiLCJjaXR5X25hbWUiOm51bGwsImNpdHlfY29kZSI6bnVsbH0.EEUg6eIF2ObxG20zmNX87GIpGrtLLuG_AxfvrmHgT70","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDRhY2U1NTdjMzY3IiwiaWF0IjoxNjE1NTE1MjIxLCJuYmYiOjE2MTU1MTUyMjEsImV4cCI6MTYxODEwNzIyMSwidWlkIjoxMjEzNTgwLCJuYW1lIjoiXHU2YjIyXHU0ZTUwXHU5YTZjIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDMtMTIgMTA6MTM6NDEiLCJjaXR5X25hbWUiOm51bGwsImNpdHlfY29kZSI6bnVsbH0.rJXmc8Lvx3JH_2H2vy_x_pjNZItpLiNf_wpn0jdZoOU","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDRhY2ViM2VjM2NkIiwiaWF0IjoxNjE1NTE1MzE1LCJuYmYiOjE2MTU1MTUzMTUsImV4cCI6MTYxODEwNzMxNSwidWlkIjoxMjEzNTgyLCJuYW1lIjoiXHU1YmI2XHU1ZWFkXHU0ZjVjXHU0ZTFhIiwiY3JlYXRlZF9hdCI6IjIwMjEtMDMtMTIgMTA6MTU6MTUiLCJjaXR5X25hbWUiOm51bGwsImNpdHlfY29kZSI6bnVsbH0.AgkWVAEsB99pnuJuMCPE7EwpPiR2GGKj4JLZX1Mor2o","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDQ5OTA2OTdiNWI3IiwiaWF0IjoxNjE1NDMzODMzLCJuYmYiOjE2MTU0MzM4MzMsImV4cCI6MTYxODAyNTgzMywidWlkIjoxMjEyNjIxLCJuYW1lIjoiXHU3ZWEyXHU5Y2E0XHU5YzdjXHU3ZWZmXHU5Y2E0XHU5YzdjXHU0ZTBlXHU5YTc0IiwiY3JlYXRlZF9hdCI6IjIwMjEtMDMtMTEgMTE6Mzc6MTMiLCJjaXR5X25hbWUiOm51bGwsImNpdHlfY29kZSI6bnVsbH0.Ir6ajeD0FrNgOcGEfZRF3Ri0qSqOg7fQxhNuhsQ31Dk","Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI2MDQ5Yjk4Y2E2NTAwIiwiaWF0IjoxNjE1NDQ0MzY0LCJuYmYiOjE2MTU0NDQzNjQsImV4cCI6MTYxODAzNjM2NCwidWlkIjoxMjEyOTI1LCJuYW1lIjoiXHU3MzhiXHU1ZmI3XHU5Zjk5IiwiY3JlYXRlZF9hdCI6IjIwMjEtMDMtMTEgMTQ6MzI6NDQiLCJjaXR5X25hbWUiOm51bGwsImNpdHlfY29kZSI6bnVsbH0.e_DNtaFihKrTQpAFFSwQnG0cMMKzEw0pnIehglTmyZg"]
+
+
+
+
+
+
 
 cfzhdArr=[];
 for (let i = 0; i <acsecret.length; i++) {
@@ -106,7 +111,7 @@ hd.phoneModel=phoneModel[i];
 cfzhdArr.push(JSON.stringify(hd));
 }
 
-console.log(cfzhdArr.length+"个账号")
+console.log(cfzhdArr)
 
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
