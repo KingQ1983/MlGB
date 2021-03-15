@@ -231,6 +231,8 @@ def start():
    watch('SHUQI_1YUAN_BODY',yuan1_bdlist)
    
    
+   print(str(len(video_bdlist)))
+   print('开始')
    j=0
    for i in range(len(video_bdlist)):
      j+=1
