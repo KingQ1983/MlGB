@@ -1,0 +1,31 @@
+name: A-舒淇笑说
+
+on:
+  #schedule:
+    #- cron: '0-12/1 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/Shuqi_story.py
+        env:
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            SHUQI_SIGN_BODY: ${{ secrets.SHUQI_SIGN_BODY }}
+            SHUQI_VIDEO_BODY: ${{ secrets.SHUQI_VIDEO_BODY }}
+            SHUQI_DRAW_BODY: ${{ secrets.SHUQI_DRAW_BODY }}
+            SHUQI_WITH_BODY: ${{ secrets.SHUQI_WITH_BODY }}
+            SHUQI_TM_BODY: ${{ secrets.SHUQI_TM_BODY }}
+            SHUQI_1YUAN_BODY: ${{ secrets.SHUQI_1YUAN_BODY }}
