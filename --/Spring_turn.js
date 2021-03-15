@@ -109,7 +109,7 @@ hd.phoneModel=phoneModel[i];
 cfzhdArr.push(JSON.stringify(hd));
 }
 
-console.log(cfzhdArr)
+
 
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
