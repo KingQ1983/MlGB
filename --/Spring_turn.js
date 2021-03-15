@@ -93,10 +93,6 @@ if (process.env.CFZHD && process.env.CFZHD.indexOf('\n') > -1) {
 
 
 
-
-
-
-
 for (let i = 2; i <= cfzcount; i++) {
     cfzurlArr.push($.getdata(`cfzurl${i}`))
     cfzhdArr.push($.getdata(`cfzhd${i}`))
@@ -104,13 +100,13 @@ for (let i = 2; i <= cfzcount; i++) {
   }
 
 cfzhdArr=[];
-for (let i = 0; i <= acsecret.length; i++) {
+for (let i = 0; i <acsecret.length; i++) {
 hd.Authorization=acsecret[i];
 hd.phoneModel=phoneModel[i];
 cfzhdArr.push(JSON.stringify(hd));
 }
 
-console.log(cfzhdArr)
+console.log(cfzhdArr.length+"个账号")
 
     let execAcList = [];
     let slot = cfzhdArr.length % concurrency == 0 ? cfzhdArr.length / concurrency : parseInt(cfzhdArr.length / concurrency) + 1;
