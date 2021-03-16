@@ -29,3 +29,4 @@ jobs:
             SHUQI_WITH_BODY: ${{ secrets.SHUQI_WITH_BODY }}
             SHUQI_TM_BODY: ${{ secrets.SHUQI_TM_BODY }}
             SHUQI_1YUAN_BODY: ${{ secrets.SHUQI_1YUAN_BODY }}
+            SHUQI_BUBBLE_BODY: ${{ secrets.SHUQI_BUBBLE_BODY }}
