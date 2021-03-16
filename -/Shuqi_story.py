@@ -25,7 +25,7 @@ tm_bd=''
 yuan1_bd=''
 bubble_bd=''
 
-tmlong=1
+tmlong=10
 
 sign_bdlist=[]
 video_bdlist=[]
