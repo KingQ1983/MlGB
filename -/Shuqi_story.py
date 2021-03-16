@@ -23,6 +23,7 @@ draw_bd=''
 with_bd=''
 tm_bd=''
 yuan1_bd=''
+bubble_bd=''
 
 tmlong=1
 
@@ -32,7 +33,7 @@ draw_bdlist=[]
 with_bdlist=[]
 tm_bdlist=[]
 yuan1_bdlist=[]
-
+bubble_bdlist=[]
 
 
 djj_tele_cookie=''
@@ -48,18 +49,15 @@ header={"Accept": "application/json, text/plain, */*","Accept-Encoding": "gzip, 
 
 
 
-
 def spring_earn():
-   
-   boxTask()
    tm()
    getsign()
    draw()
    lottery_10()
    with_()
    yuan1()
-    
-
+   boxTask()
+   bubble()
  
 
 
@@ -72,7 +70,7 @@ def boxTask():
      Res=response.json()
      print(Res)
      if Res['status']=='200':
-        msg+=f'''{Res['data']['readTime']}|'''
+        msg+=f'''|{Res['data']['readTime']}|'''
      loger(msg)
    except Exception as e:
       msg=str(e)
@@ -162,6 +160,27 @@ def with_():
       print(msg)
       
       
+def bubble():
+   print('\n bubble')
+   try:
+     msg=''
+
+     response = requests.post('https://ocean.shuqireader.com/api/prizecenter/xapi/prize/bubble/info',headers=header,data=bubble_bd)
+     Res=response.json()
+     print(Res)
+     if Res['status']=='200':
+        msg=f'''|阅读金币{Res['data']['totalGold']}'''
+        if Res['data']['totalGold']>0:
+          response = requests.post('https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive',headers=header,data=bubble_bd)
+          Res=response.json()
+          print(Res)
+     loger(msg)
+     
+   except Exception as e:
+      msg=str(e)
+      print(msg)
+      
+      
       
 def watch(flag,list):
    vip=''
@@ -221,7 +240,7 @@ def clock(func):
     
 @clock
 def start():
-   global result,video_bd,sign_bd,draw_bd,with_bd,tm_bd,yuan1_bd,userId
+   global result,video_bd,sign_bd,draw_bd,with_bd,tm_bd,yuan1_bd,userId,bubble_bd
    print('Localtime',datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S", ))
    watch('SHUQI_SIGN_BODY',sign_bdlist)
    watch('SHUQI_VIDEO_BODY',video_bdlist)
@@ -229,24 +248,23 @@ def start():
    watch('SHUQI_WITH_BODY',with_bdlist)
    watch('SHUQI_TM_BODY',tm_bdlist)
    watch('SHUQI_1YUAN_BODY',yuan1_bdlist)
-   
-   
-   print(str(len(video_bdlist)))
-   print('开始')
+   watch('SHUQI_BUBBLE_BODY',bubble_bdlist)
+   print('=======')
    j=0
    for i in range(len(video_bdlist)):
      j+=1
-     result+='【'+str(j)+'】'
+     result+='【'+str(j)+'】'+IDARY[i]+'|'
      sign_bd=sign_bdlist[i]
      video_bd=video_bdlist[i]
      draw_bd=draw_bdlist[i]
      with_bd=with_bdlist[i]
      tm_bd=tm_bdlist[i]
      yuan1_bd=yuan1_bdlist[i]
+     bubble_bd=bubble_bdlist[i]
      userId=IDARY[i]
      spring_earn()
      result+='\n'
-     print(result)
+     #print(result)
    pushmsg(Gamename,result)
 
 if __name__ == '__main__':
