@@ -2,7 +2,9 @@ name: A-舒淇笑说
 
 on:
   schedule:
-    - cron: '0-12/1 * * *'
+    - cron: '15 0-12/1 * * *'
+  #watch:
+    #types: [started]
   workflow_dispatch:
 jobs:
   build:
