@@ -390,7 +390,7 @@ def start():
    watch('SPRING_IMEI_CCMS',hdlist)
    for j in range(len(cklist)):
      result+='【'+str(len(cklist))+'-'+str(j+1)+'】'
-     header['Authorization']=cklist[1]
+     header['Authorization']=cklist[j]
      header['phoneModel']=phoneModel[j]
      header['X-IMEI']=fun(hdlist[0])[j]
      header['X-CCMS']=fun(hdlist[1])[j]
