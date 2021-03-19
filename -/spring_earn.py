@@ -397,7 +397,7 @@ def start():
      result+='\n'
      #print(result)
      #break
-     #time.sleep(300)
+     time.sleep(60)
      
    pushmsg(Gamename,result)
 
