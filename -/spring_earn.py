@@ -28,13 +28,12 @@ djj_tele_cookie=''
 
 
 
-
-
 header={"Accept": "*/*","Accept-Encoding": "gzip, deflate","Accept-Language": "zh-Hans-CN;q=1, en-US;q=0.9, zh-Hant-CN;q=0.8","Connection": "close","Content-Type": "application/x-www-form-urlencoded","Host": "cf-api.douzhuanapi.cn:10002","User-Agent": "NormalDemo/1 (iPhone; iOS 14.4; Scale/2.00)","X-V": "1","osType": "iOS","phoneModel": "","platform": "iOS","versioncode": "1",}
 phoneModel=['iPhone XR','iPhone 7 Plus','iPhone 6s Plus','iPhone SE','iPad mini (WiFi)','iPhone 6 Plus','iPhone 5S','iPhone 8 Plus','iPhone 6','iPhone 6s Plus']
 
 def spring_earn():
    getuser()
+   #return 
    self_task_info()
    allrask()
    getsigninfo()
@@ -59,7 +58,9 @@ def allrask():
    task_do(5,5)
    time.sleep(1)
    task_award(5)
-
+   task_do(21,2)
+   task_award(21)
+   time.sleep(1)
 
 
 def getuser():
@@ -70,8 +71,10 @@ def getuser():
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/user',headers=header)
      Res=response.json()
      print(Res['message'])
+     
      if Res['code']==200:
        msg+=Res['data']['nick_name']+'|累收'+Res['data']['total_gain']+'|今收'+Res['data']['today_gain']+'|转收'+Res['data']['forward_gain']+'|现金余额'+Res['data']['balance']+'|'
+     #print(Res)
    except Exception as e:
       print(str(e))
    loger(msg)
@@ -115,7 +118,7 @@ def getsigninfo(flag=0):
      msg=''
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/gold_sign_info',headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
      if Res['code']==200:
         if  Res['data']['today_sign_status']==1:
            issign=1 
@@ -137,7 +140,7 @@ def task_award(id):
      msg=''
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/get_red_task_gold?id='+str(id),headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
      
    except Exception as e:
       msg=str(e)
@@ -150,7 +153,7 @@ def task_do(item_id,task_type):
      msg=''
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/red_task_report?item_id='+str(item_id)+'&task_type='+str(task_type),headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
      
    except Exception as e:
       msg=str(e)
@@ -163,10 +166,10 @@ def treasure_box_gain():
      msg=''
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/treasure_box_gain?treasure_box_id=425924&type=1',headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/treasure_box_gain?gold_gain_id=12284065&treasure_box_id=425924&type=2',headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
    except Exception as e:
       print(str(e))
       
@@ -181,13 +184,13 @@ def getsign():
    	   return 
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/gold_sign?type=1',headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
      if isdoubsign==1:
    	   return 
      msg=''
      response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/gold_sign?gold_gain_id=12269873&type=2',headers=header)
      Res=response.json()
-     print(Res)
+     print(Res['message'])
    except Exception as e:
       print(str(e))
       
@@ -213,18 +216,18 @@ def self_readlist():
       print(str(e))
    print(msg)
       
-def F5():
-   print('\n F5')
+def F5(i):
+   #print('\n F5')
    try:
-       time.sleep(random.randint(100,400)/1000)
+       time.sleep(random.randint(300,500)/1000)
        bd='ad_source=1&location=3&position=5&report_type=1'
        response = requests.post('http://cf-api.douzhuanapi.cn:10002/api/ad_sense/report',headers=header,data=bd)
        Res=response.json()
-       #print(Res)
-       if Res['code']==200:
-         print(f'''【】upload.....{Res['data']}''')
-       else:
-         print(f'''【】upload.....❌''')
+       if i%50==0:
+        if Res['code']==200:
+          print(f'''【{i}】upload.....{Res['data']}''')
+        else:
+          print(f'''【{i}】upload.....❌''')
 
    except Exception as e:
       print(str(e))
@@ -236,7 +239,7 @@ def self_read():
      randlist=[]
      if len(readidlist)==0:
         return
-     for i in range(5):
+     for i in range(10):
         randlist.append(random.choice(readidlist))
      print(randlist)
      ii=0
@@ -250,16 +253,11 @@ def self_read():
        else:
          print(f'''【{ii}】loading.....❌\n''')
          F5()
-       for i in range(150):
-         print(f'''F5【{i}】''')
-         F5()
-       
-       #print('waiting........'+str(rm)+'s')
-       #time.sleep(rm)
-       
+       for i in range(100):
+         F5(i+1)
        response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/self_read_report?item_id='+str(readid),headers=header)
        Res=response.json()
-       print(Res)
+       print(Res['message'])
        if Res['code']==200:
          print(f'''【{ii}】awarding.....\n''')
        if Res['code']==422:
@@ -267,10 +265,12 @@ def self_read():
          if Res['message'].find('系统')>=0:
            msg+='号码变黑，明天再来'
            break
-      
+         if Res['message'].find('自阅')>=0:
+           msg+='阅读上限，明天再来'
+           break
        response = requests.get('http://cf-api.douzhuanapi.cn:10002/api/self_read_init?item_id='+str(readid),headers=header)
        Res=response.json()
-       print(Res)
+       print(Res['message'])
        if Res['code']==200:
          print(f'''【{ii}】complete.....\n''')
        else:
@@ -279,17 +279,16 @@ def self_read():
        bd='ad_source=1&location=3&position=8&report_type=1'
        response = requests.post('http://cf-api.douzhuanapi.cn:10002/api/ad_sense/report',headers=header,data=bd)
        Res=response.json()
-       print(Res)
+       print(Res['message'])
        if Res['code']==200:
          print(f'''【{ii}】upload.....{Res['data']}\n''')
        else:
          print(f'''【{ii}】upload.....❌|n''')
          
          
-       if ii==5:
-         msg+='本次完成阅读5篇'
-         print('\n task competed=======')
-         break
+         
+       print('【'+str(len(randlist))+'-'+str(ii+1)+'】==task competed='+str(readid))
+         
        #rm=random.randint(60,)
        #print(f'''【{ii}】waiting.....{rm}s\n''')
        #time.sleep(rm)
@@ -398,7 +397,7 @@ def start():
      result+='\n'
      #print(result)
      #break
-     time.sleep(60)
+     #time.sleep(300)
      
    pushmsg(Gamename,result)
 
