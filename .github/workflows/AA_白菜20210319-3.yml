@@ -1,0 +1,31 @@
+name: AA_白菜20210319-3
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT 
+        
+      - name: '公众号iosrule' 
+        run: python3 ./-/BaiCai3.py 
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            bd_url: ${{ secrets.bd_url }}
+            bd_bd: ${{ secrets.bd_bd }}
+            bd_hd: ${{ secrets.bd_hd }}
+            bd_ck: ${{ secrets.bd_ck }}
+            bd_task: ${{ secrets.bd_task }}
