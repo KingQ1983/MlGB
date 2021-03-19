@@ -25,3 +25,4 @@ jobs:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
             XMLY_BARK_COOKIE: ${{ secrets.XMLY_BARK_COOKIE }}
             SPRING_EARN_BODY: ${{ secrets.SPRING_EARN_BODY }}
+            SPRING_IMEI_CCMS: ${{ secrets.SPRING_IMEI_CCMS }}
