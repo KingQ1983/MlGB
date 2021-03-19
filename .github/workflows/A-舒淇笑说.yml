@@ -1,8 +1,8 @@
 name: A-舒淇笑说
 
 on:
-  #schedule:
-    #- cron: '0-12/1 * * *'
+  schedule:
+    - cron: '0-12/1 * * *'
   workflow_dispatch:
 jobs:
   build:
@@ -27,6 +27,5 @@ jobs:
             SHUQI_VIDEO_BODY: ${{ secrets.SHUQI_VIDEO_BODY }}
             SHUQI_DRAW_BODY: ${{ secrets.SHUQI_DRAW_BODY }}
             SHUQI_WITH_BODY: ${{ secrets.SHUQI_WITH_BODY }}
-            SHUQI_TM_BODY: ${{ secrets.SHUQI_TM_BODY }}
-            SHUQI_1YUAN_BODY: ${{ secrets.SHUQI_1YUAN_BODY }}
+            SHUQI_USER: ${{ secrets.SHUQI_USER }}
             SHUQI_BUBBLE_BODY: ${{ secrets.SHUQI_BUBBLE_BODY }}
