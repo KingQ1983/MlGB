@@ -37,6 +37,8 @@ tasklist=[]
 
 
 
+osenviron['JD_COOKIE']='''pt_key=AAJgN8sKADDr3MRFE2EqfwUVOpQgfDFrzhIE0tztcFZDUTX2DCXl0XWkcaFzFg4nrQ7sgK0eD8I;pt_pin=jd_kcDKIXFrQgaj;
+'''
 
 
 
@@ -243,7 +245,7 @@ def start():
         result = ''
         coins=0
         TotalBean()
-        print(f'''\n******开始【京东账号{index}】{nickname[-4:]} || {UserName[-4:]}*********\n''')
+        print(f'''\n******开始【京东账号{index}】{nickName[-4:]} || {UserName[-4:]}*********\n''')
         if not isLogin:
            pushmsg(Game_Name,f'''【提示】cookie已失效 ,京东账号{index} {nickName} || {UserName}\n请重新登录获取\nhttps://bean.m.jd.com/''')
            continue
