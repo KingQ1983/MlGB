@@ -37,8 +37,7 @@ tasklist=[]
 
 
 
-osenviron['JD_COOKIE']='''pt_key=AAJgN8sKADDr3MRFE2EqfwUVOpQgfDFrzhIE0tztcFZDUTX2DCXl0XWkcaFzFg4nrQ7sgK0eD8I;pt_pin=jd_kcDKIXFrQgaj;
-'''
+
 
 
 
