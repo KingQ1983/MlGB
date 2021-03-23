@@ -243,7 +243,7 @@ def start():
         result = ''
         coins=0
         TotalBean()
-        print(f'''\n******开始【京东账号{index}】{nickname[-4]:} || {UserName[-4:]}*********\n''')
+        print(f'''\n******开始【京东账号{index}】{nickname[-4:]} || {UserName[-4:]}*********\n''')
         if not isLogin:
            pushmsg(Game_Name,f'''【提示】cookie已失效 ,京东账号{index} {nickName} || {UserName}\n请重新登录获取\nhttps://bean.m.jd.com/''')
            continue
