@@ -28,8 +28,8 @@ header={"Accept": "*/*","Accept-Encoding": "br, gzip, deflate","Accept-Language"
 Mit = 'https://www.dawang-goon.cn/api/jbs/'
 
 def Wx_dawang():
-   getSign()
    sign()
+   getSign()
    getinfos()
    
 def getSign():
@@ -39,14 +39,12 @@ def getSign():
      
      response = requests.post(Mit+sys._getframe().f_code.co_name,headers=header,data=json.dumps(bd))
      Res=response.json()
-     print(Res)
-     if(Res['error']==0):
-       if(len(Res['question'])>0):
+     if(len(Res['question'])>0):
          bd['answer']=random.choice(Res['question'])
-       msg='签到成功✌🏻️.'
-     else:
-        if Res['signNow']=='1':
+     if Res['signNow']=='1':
            msg='签到成功✌🏻️.'
+     else:
+          msg='签到失败🍌'
    except Exception as e:
       msg=str(e)
    loger(msg)
@@ -55,14 +53,14 @@ def sign():
    try:
      msg=''
      
-     if json.dumps(bd).find('answer')<0:
-        return 
+     #if json.dumps(bd).find('answer')<0:
+        #return 
      response = requests.post(Mit+sys._getframe().f_code.co_name,headers=header,data=json.dumps(bd))
      Res=response.json()
-     print(Res)
+     #print(Res)
    except Exception as e:
       msg=str(e)
-      print(msg)
+      #print(msg)
 
 def getinfos():
    print('\n score')
