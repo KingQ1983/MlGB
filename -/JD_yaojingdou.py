@@ -236,14 +236,14 @@ def start():
         hd['Cookie']=cookie
         
         UserName = urllib.parse.quote(re.compile('pt_pin=(.+?);').findall(cookie)[0])
-        print(UserName)
+        #print(UserName)
         index = cc + 1
         isLogin =True
         nickName = ''
         result = ''
         coins=0
         TotalBean()
-        print(f'''\n******开始【京东账号{index}】{nickname[-4]} || {UserName[-4:]}*********\n''')
+        print(f'''\n******开始【京东账号{index}】{nickname[-4]:} || {UserName[-4:]}*********\n''')
         if not isLogin:
            pushmsg(Game_Name,f'''【提示】cookie已失效 ,京东账号{index} {nickName} || {UserName}\n请重新登录获取\nhttps://bean.m.jd.com/''')
            continue
