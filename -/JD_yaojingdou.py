@@ -224,7 +224,7 @@ def clock(func):
     
 @clock
 def start():
-   global result,hd,index,isLogin,nickName,UserName,cookie
+   global result,hd,index,coins,isLogin,nickName,UserName,cookie
    print('Localtime',datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S", ))
    watch('JD_COOKIE',cookiesArr)
 
