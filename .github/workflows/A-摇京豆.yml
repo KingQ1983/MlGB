@@ -20,7 +20,7 @@ jobs:
         run: pip install -r ./-/C.TXT
         
       - name: '-' 
-        run: python3 ./-/摇京豆.py
+        run: python3 ./-/JD_yaojingdou.py
         env:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
             #XMLY_BARK_COOKIE: ${{ secrets.XMLY_BARK_COOKIE }}
