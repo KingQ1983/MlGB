@@ -1,0 +1,28 @@
+name: AA_BDJSMSG
+
+on:
+  schedule:
+    - cron: '10 7 * * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT 
+        
+      - name: '___' 
+        run: python3 ./-/BDJSMSG.py 
+        env:
+            DJJ_BARK_COOKIE: ${{ secrets.DJJ_BARK_COOKIE }}
+            DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
+            bd_ck: ${{ secrets.bd_ck }}
+            
