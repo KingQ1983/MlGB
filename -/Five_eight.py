@@ -192,7 +192,7 @@ def mineral_main():
    try:
         response = requests.get('https://magicisland.58.com/web/mineral/main?openSettings=1',headers=hd3,timeout=10)
         userRes=json.loads(response.text)
-        print(userRes)
+        #print(userRes)
         game=userRes['result']['games']
         gameProcess=f'''游戏进度{game['gameProcess']['joinedNum']}-{game['gameProcess']['gameNum']}'''
         print(gameProcess)
