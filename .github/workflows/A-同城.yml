@@ -23,6 +23,6 @@ jobs:
         run: python3 ./-/Five_eight.py
         env:
             DJJ_TELE_COOKIE: ${{ secrets.DJJ_TELE_COOKIE }}
-            tc58_dream_ck: ${{ tc58_dream_ck }}
+            tc58_dream_ck: ${{ secrets.tc58_dream_ck }}
             tc58_tree_ck: ${{ secrets.tc58_tree_ck }}
             tc58_lot_ck: ${{ secrets.tc58_lot_ck }}
