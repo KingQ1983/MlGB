@@ -1,3 +1,5 @@
+#2021.4.1update
+
 import requests
 import os
 import re
@@ -49,10 +51,11 @@ mission_body='{"message":"2wppMZ6ijrGp8GLM20D8nDgFz42r2vATlHEpAU7c90GhJuBA15MTIA
 
 
 
-
 def TC58():
   
   try:
+   
+   
    
    dreamtown_monopoly()
    mineral_attendance()
@@ -61,7 +64,10 @@ def TC58():
    activityTreeMoney()
    dreamtown()
    mineral()
-   
+   print('通知========🔔🔔')
+   activityTreeMoney_getConfig(1)
+   dreamtown_maininfo(1)
+   mineral_main(1)
   except Exception as e:
       print(str(e))
 
@@ -99,16 +105,42 @@ def mineral_attendance():
           userRes=json.loads(response.text)
           number=userRes['result']['infoList'][0]['number']
           if userRes['result']['infoList'][0]['userState']==0:
-            
-            response = requests.post('https://magicisland.58.com/web/attendance/signIn',headers=hd3,data='number='+number+'&category=oneDay&productorid=3',timeout=10)
-            userRes=json.loads(response.text)
-            print(userRes['desc'])
+             attendance_signIn(number)
           else:
              print(number+'单日打卡已报名,打卡时间5-8点')
-             msg=number+'单日打卡已报名,打卡时间5-8点|'
+             msg=number+'单日打卡已报名|'
              loger(msg)
+          
+          if not userRes['result']['attendSituationList'][0]:
+             attendance_attend(number)
+          else:
+            msg='已打卡(5-8点)|'
+            loger(msg)
    except Exception as e:
       print(str(e))
+      
+
+def attendance_signIn(number):
+   print('\n 【signIn报名】')
+   try:
+       print(number)
+       hd3['Referer']='https://magicisland.58.com/web/v/client'
+       response = requests.post('https://magicisland.58.com/web/attendance/signIn',headers=hd3,data='number='+number+'&category=oneDay&productorid=3',timeout=10)
+       userRes=json.loads(response.text)
+       print(userRes['message'])
+   except Exception as e:
+      print(str(e))
+      
+def attendance_attend(number):
+   print('\n 【attend打卡】')
+   try:
+       hd3['Referer']='https://magicisland.58.com/web/v/client'
+       response = requests.post('https://magicisland.58.com/web/attendance/attend',headers=hd3,data='productorid=3&number='+number,timeout=10)
+       userRes=json.loads(response.text)
+       print(userRes['message'])
+   except Exception as e:
+      print(str(e))
+      
       
 
 def dreamtown_monopoly():
@@ -121,6 +153,8 @@ def dreamtown_monopoly():
    except Exception as e:
       print(str(e))
       
+      
+      
 def mission_jianglijin():
    print('\n 【mission_jianglijin奖励金】')
    try:
@@ -128,8 +162,13 @@ def mission_jianglijin():
           userRes=json.loads(response.text)
           #print(userRes)
           msg1=userRes['data']['amount']
+          #签到
+          if not userRes['data']['tractSignProgress']['todaySignStatus']:
+              mission_sign()
+          #看视频
+          
           for v in userRes['data']['inventiveVideo']:
-             if v['taskState']==0:
+             if not v['taskState']==1:
                 _reward_video(mission_body)
                 time.sleep(5)
           response = requests.get('https://wxcvip.58.com/api/mission/index?bizId=INCENTIVE_VIDEO',headers=hd3,timeout=10)
@@ -138,6 +177,17 @@ def mission_jianglijin():
           print(msg2)
    except Exception as e:
       print(str(e))
+def mission_sign():
+   print('\n 【mission_sign】')
+   try:
+          response = requests.get('https://wxcvip.58.com/api/mission/user/sign',headers=hd3,timeout=10)
+          userRes=json.loads(response.text)
+          print(userRes)            
+   except Exception as e:
+      print(str(e))
+      
+      
+      
       
       
       
@@ -187,7 +237,7 @@ def mineral_sign():
        
    except Exception as e:
       print(str(e))
-def mineral_main():
+def mineral_main(push=0):
    print('\n 【mineral_main】')
    try:
         response = requests.get('https://magicisland.58.com/web/mineral/main?openSettings=1',headers=hd3,timeout=10)
@@ -199,7 +249,9 @@ def mineral_main():
         
         userInfo=f'''{userRes['result']['userInfo']['nickName']}|{userRes['result']['userInfo']['minerOre']}({userRes['result']['userInfo']['minerOreValue']})|'''
         #print(userInfo)
-        loger(userInfo)
+        if push==1:
+           loger(userInfo)
+           return
         task=userRes['result']['tasks']
         for key in task:
           if task[key]:
@@ -249,24 +301,20 @@ def mineral_ershouche_look():
              infoIdlist.append(userRes['result']['getListInfo']['infolist'][i]['infoID'])
         
         print(infoIdlist)
+        nm=0
         for infoId in infoIdlist:
            print(infoId)
+           nm+=1
+           if num==11:
+              break
            infoId=str(infoId)
            response = requests.post('https://app.58.com/api/detail/car/ux/ifUX',headers=hd3,data='infoId='+infoId,timeout=10)
            userRes=json.loads(response.text)
            print(userRes)
-        
-        
-        
            time.sleep(10)
            response = requests.get('https://app.58.com/api/detail/ershouche/'+infoId+'?format=json&typos=topinfo_l15&sidDict=%7B%22pgtid%22%3A%22%22%2C%22gtid%22%3A%22171038444211963652871649195%22%2C%22TID%22%3A%221faecfd8-1c68-43f8-b055-1daff437bb7d%22%7D&locationcity=3&platform=ios&params=%7B%22carinfolog%22%3A%7B%22userid%22%3A%2238017143199760%22%2C%22abtest348%22%3A%22WBERSHOUCHE_348_628172700%22%2C%22abtest389%22%3A%22WBERSHOUCHE_389_851313131%22%2C%22page_id%22%3A%22514%22%2C%22clickfrom%22%3A%22other%22%2C%22dianpu_type%22%3A%22feidianpu%22%2C%22abtest398%22%3A%22%22%2C%22business_type%22%3A%22z%22%2C%22pgtid%22%3A%22171038444211963652871649195%22%2C%22cateid%22%3A%2229%22%2C%22fxc_type%22%3A%22feifangxinche%22%2C%22discityname%22%3A%22%E5%B9%BF%E5%B7%9E%22%2C%22isCoupon%22%3Afalse%2C%22abtest373%22%3A%22WBERSHOUCHE_373_2129393547%22%2C%22discityid%22%3A%223%22%2C%22reco_type%22%3A%22feituijian%22%2C%22SFXSJ%22%3A%22%22%2C%22pos%22%3A%2214%22%2C%22abtest356%22%3A%22WBERSHOUCHE_356_1657472220%22%2C%22productid%22%3A%2210003%22%2C%22abtest395%22%3A%22WBERSHOUCHE_395_1806390698%22%2C%22TID%22%3A%221faecfd8-1c68-43f8-b055-1daff437bb7d%22%2C%22page%22%3A%221%22%2C%22infoid%22%3A%2245286883288225%22%2C%22data_source%22%3A%22shenqikuangche%22%2C%22is_def_list%22%3A%221%22%7D%7D&appId=3&version=10.12.5&localname=gz',headers=lookhd,timeout=10)
            userRes=json.loads(response.text)
            print(userRes['msg'])
-           
-           
-        
-        
-        
    except Exception as e:
       print(str(e))
       
@@ -314,7 +362,7 @@ def activityTreeMoney_getActivityTaskList():
         print(msg)
    except Exception as e:
       print(str(e))
-def activityTreeMoney_getConfig():
+def activityTreeMoney_getConfig(push=0):
    print('\n 【activityTreeMoney_getConfig】')
    global treeId
    try:
@@ -325,7 +373,9 @@ def activityTreeMoney_getConfig():
         treeId=userRes['data']['treeConfig']['treeId']
         msg=f'''{userRes['data']['treeConfig']['treeTag']}-<可用水滴{userRes['data']['usableEnergy']}g💧|(水桶{userRes['data']['treeConfig']['bottleConfig']['bottleEnergy']}/{userRes['data']['treeConfig']['bottleConfig']['bottleVolume']})>(等级{userRes['data']['treeConfig']['treeLevelNo']}/{userRes['data']['treeConfig']['treeLevelMax']})[{userRes['data']['treeConfig']['wateringTips']},{userRes['data']['treeConfig']['upUpgradeRewardTips']},{userRes['data']['treeConfig']['rewardTips']}]|'''
         print(msg)
-        loger(msg)
+        if push==1:
+           loger(msg)
+           return
         taskType=userRes['data']['treeConfig']['upgradeReward']['taskType']
         taskConfigId=userRes['data']['treeConfig']['upgradeReward']['taskConfigId']
         if userRes['data']['treeConfig']['upgradeReward']['status']==1:
@@ -448,7 +498,7 @@ def lotteryMachine_drawLuck():
       print(str(e))
       
 ##############################
-def dreamtown_maininfo():
+def dreamtown_maininfo(push=0):
    print('\n 【dreamtown_maininfo】')
    try:
         global dreamtown_house,dreamtown_car
@@ -457,12 +507,14 @@ def dreamtown_maininfo():
         #print(userRes)
         userInfo=userRes['result']['userInfo']
         msg=f'''{userInfo['nickName']}_{userInfo['level']}|{userInfo['coin']}/{userInfo['offlineCoin']}|'''
-        loger(msg)
+        if push==1:
+           loger(msg)
+           return
         if int(userInfo['offlineCoin'])>10000:
            dreamtown_offlineicons()
         dreamtown_house=userRes['result']['levelInfo']['house']
         dreamtown_car=userRes['result']['levelInfo']['car']
-        msg+=f'''{dreamtown_house}|{dreamtown_car}'''
+        msg=f'''{dreamtown_house}|{dreamtown_car}'''
         print(msg)
         
         levelInfo=userRes['result']['locationInfo']
@@ -629,7 +681,7 @@ def start():
         print('【'+str(cc+1)+'】-'+'🏆🏆🏆🏆运行完毕')
         result+='\n'
    #print('\n'+result)
-   pushmsg('通城',result)
+   pushmsg('58',result)
     
     
    
