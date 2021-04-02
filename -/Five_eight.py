@@ -1,4 +1,6 @@
 #2021.4.1update
+#2021.4.2update
+
 
 import requests
 import os
@@ -47,7 +49,7 @@ videobody='{"message":"2NKiU85hKXRfooaBIBLHOa0NbAyypvtoJYu6TxnofsnR5/Fm0bAsRkqcQ
 
 mission_body='{"message":"2wppMZ6ijrGp8GLM20D8nDgFz42r2vATlHEpAU7c90GhJuBA15MTIA3s4YomPXVerLS4V75mj5uyGkyjgSA6rRy\/a2MOJnGMD3QB8ivNeLkRqCrWNk3scw2GWeu\/Hhd3M8QZPXCq+lIhnC4LS+6rTbLnqTcsPAfL4qdO0+60WNT7pgG59ZJBI0DW9ml9zyOGjN1aNJ0MF\/7byTC1xnSz0lV65N1tEEVBEzCenP\/U9UaDn69wjD8Ijg2GpZeEbf2zE5w8BVQRzoAmWhrRlrmVrsD3WU2HMOFK3MEk+DD0ma4gZ\/3LFhVzgP3\/vAX2SCxzrLlEPdxN3rIpDkZ8DjLG8tHKbcaPviEfd4aXGgam02pu83NhkwSn+6s12vmoSYhWUBTSCz0hT1\/I4c\/Xol73dJke7w4kpS4Yn3y9LsXt0soZ7TChqjyqncjfcFWLPdb\/zszmt\/vJMZshAC8JBK+Yu7HiwNEbdwrINzEydGbjJ02qL98umoSiddGF+A7RrJKthgkVDmiKuYuS8gOzfsyiQdXWMqQaSH94QXKJ6OLopOPDTVKs\/rdjlf1KtAZdTmcmuv586BqrfJsEbLx3gNH5F5epviPcC1B6N6VwK4Vc\/uecDxTDbCUFihrnasFcw4Z7u2vC\/wpcURd6o3tVPcH+\/Gks3eilG2C+ViyN9ocZvV3nHqk5HjA+wgJn4NJHmbKTD\/avANIkr5HW53aNgHGUbwTGa1m\/LGsNKbgPoxlpkHcLJpILwzc\/oSa9RFBg0mXk4vU3mytLp9noMzl3xe8+gq3UrDHYqdqA5i\/0eVaKQy6ZwbWtSAfqltnqjnxLVRum8PiYUpGhpS5pXcAQ5eZ41zyshMlWvZpyMOKrnYQkxjpEYWYg1RE3+F1Wi6guaizUKu+BJcMi6d4uNeAu0dd4qHJKFEcmC8UAcq3ydt1dAgljYT6nK3TEadsPwdxlTMm7cu+cWv4Q1U1FCldS426+1zllANyzVHmXGsFArQMcAPLfrHtVA6DrJMyy98joocu71xInIjpyh\/BytinoypUZkEZY6aGzSvH3J8lRbTKmsoeZf69Sa1K5zN64kf6Pu9hSvjXSpUJh3wp5P+Vw26+PxJXHzXLFP9xpKo84qeglmNxL3PlnowWsWK55hJJoo8+wM4DFF5jTs7pL3HnB\/SjR89D8tkY47KpOCWeScLZNRknCSYKzWHCMqIIsnlvEZE8koQm8XmGp0G6ebHoXELaYajjBgnGBicvR05x9RJMME+tngAZn8pQ6ZUZ9lOBZCc+9uOCVXPwlkgaVK\/\/X66e8K2Rx2KMPUo4IbJhSmvW9bJH3d3KsgRREN4kx3REfIXreVviUV3ANHbuiIeOXeoQYX2qIXbpucNUwhJuIw9NWhWROzYoHtxBfCHdj+eEO6\/nCA730olvRsE1I7dysA6DlNj0fwCQ1nDmlBYWxr2uqR\/suXK49XneQ+oSfolI5Q+JrV487n2edGfF3be8QbGCVborvLMr44BnAXm8M1nCvIe\/R9iDCg3WL5sfKj1gXJAjKPPbl3Q5mSRfeWPyeSU17T3mK\/kEVlopFkDou5muCDbz5+WACpPL++nasLhW5vZSfjHe94s4s4\/JrPRAJNDwYtiDe4O1PFqkWD3EazWN5fqcRLbrm7WE1J88fxDBbBeYOfXObtlbUOr7w5WCLiSkJfa8NnAGGjGvOUv7KedFk7BtoIMtYNPPUsvmGu\/QlZx4kRQWV+5kUDyHUyDgheITQ6hRAuQxuEAPmdY3Y9QUAkXVZC1HYJfAREviUY27FCMsa0tXhtVukkJ2g6PyK0Tsb0GbFNlByzCqgjBFQO1Tkc+gAxE2jYZ3VgJnD0AeclHPuHz25hPDtR3BZCvX\/dUrVHlEsgLEUCXa2rcFJ1mkGdV3nt\/nWfGq9qS3aH0AQjJV8rSlh4pQipWuSU\/aEBBhKF\/S7x+P9LIUXWJ7SNUsA4ExLbhTNURsY7\/g0ywdh9IzlzJDrG+rzb+0Ywdxw8kY62wxrBw61SfY3vHC5Nw4Ad0X2Gb6wZyaHH6BAEpRX8s6HNeio2F1RS4Um8uMUHun4Xl226OO\/AuJMH7HjOxVnLOgrInPzhyrqOdAzJQu6LuMOLt4sK8iLznyxc1mSZH2ZGH3yftC\/9Z2CvhUVNlR6DoA0WiUd4W42xQGhniY9JNQX9yywkfJ62TFZ\/ObaXTGLqCbVMtyCXBpMnPmUUrD3L\/jVozWNL5kWadZg9PWrpfyqMXt\/A+PJgO0G\/Bnkf\/zbptu83FLx4A5WvMc2TTA0GQdpZDJeELRKPoeb8KqFfGsoYmxvOQ4FjmzCwbyixCUvy6B2BUwA6KhxewM4R6cwy49Y\/VTDN3+XU+9xFhnE9UDbYhz4CRgcc7dqnPM96vMY5tL7V8AIpj11kWeweX77\/kU0+B7u4EymwIsM0Ua0iaJQ5eeFyqNp9SCPdVLi8RymEh0N8tqixSxLCTrTFFX9Uov8K3\/CXLlcrCTeexatPZNN1rrPVoWAHQ8ZX7oO7iTsYIqm8lN8JTdbtTmCLyccjfdJIPB6y4cgdOVN8kq3V87vvmZXsRUqhmblLykrL0B\/MpxohWX0N\/AiNseyM8OyTQbBtSnUFIsjJcwg\/lMNX091KfOxzfEoQhcQp1vMTviWoH9TNFsVtiLOJoZJfScOqzeFp9PdyT9Tw8SpechMEh4522yvwzwVmyXNrRli3Lude9UwYYi\/H0QVyTns9YTw09MpuvURQfsryB0np8u62RyI3koDKOKMSIuUfq8NJjPyY3UnvPQtqsrtzdstdsGftCBlAbxt6KP5ZK7ROZQnGjopnkAasD9DftVXoKBIiP6teIV\/znQc9lIyPaGhtZB3ErnIxiVqvffF07O+Rqvtbq5FbTAm1r0DIkvjeT1zz8DriL9rb1Ta6aJFSDoAxVxRUhbvYXSwFPbA97YNVhWN49xTVjen9VBee6ZQISvn9Q1LubWPoSJ44M2KQB25QUwcUtArdjiyVMDr+r2a00OchAMVYlZCzTDxFuATbcY65XwBwzcHQqDMKrziwXv2BXCXfPPeLBkbt9k7TrbdmPLTxspUg1Zzf3X0dt6WtpVG7PJWuhtzLVlkNE8nDMsRjAPZCvQScyPNuZ3lKYrUcNGla9FCU7eDioRi\/LlaGHRcT4VOtKdwGSdfB5dMSa+2nScdOpYllQa3z8Ym+sL1bniYuqmpDppgbUMuhVH+EEVM67J0NbSQuOl0+sd9UijBCeT0en0gwTw1zdasd9KG7NOXlrO9JFKzdSSFcQX8uQPT5N8Ca2an6SK9kSxdvtGUoMYv1ubq7J0ATesYooRFbhktoUddiZjrpkociZfP3N2REhevPe1v6yhStnSL7ZAu60h3cL7PGf\/7pF8dP2gZqCcKeJfj\/09r0Kwpa3BrRJceQ36Z2X\/xySsn67p7KFj52Rqhtj0bbOUcRMqvVzTAiJm3qMgJu5H8u3aErmhaXIth4fPSnHhIG\/T7ibRDM2XTwYEf5ijLoYff7cx6aKzuhZKqjVaTy\/RN+aALUrgfHHjuY8H0mgf\/BIuwhhShItWq0EaK6iUZQBVvOvNC9F8qsYRu67rPsfBZfitO\/IRVIZmZ3ZXAYvsrd9VoVmrU87lTxmLWn6z\/suynbjSrN2kvw61LZAxClGx9Q3g6VsbDZG3T8OOaoykDyODgzs\/GrEM1HK08MWrzHuQ2UzoeqbJ4cVohwQWZtZFQGJ7TUDxFAItCYlX58RXTEd78d\/iMhDFs9GjRKF19p\/dXnUQX5O61SwOQVTcszV+IDhEcx6mAWTEk8OR5QL1kHuMA2dgxe9YVYvrllNQv2dd3Z6w2ZGpih7h1ziDyjLFod5IACq7d90BQED4E+vSXmS2sMjXGubAFaUhC+tMBYAQM7t+opab\/8ia8QYc8\/07A2VuHUnGjP5N9d9gr7r5dC3WLrgwUwd5Ohr33vbaR9+t1IqUAPvWpE\/ac7grFeMDi7EwHtDRe4rMIcwoydCqOQHQzCH5tzouoHY7JDkcQk3C1z3r1LLrLxuNYOKwO6Ru\/ukbTJKdxKI6bGdIPgOB61q871ITUYOwl+HA==","cypher":2}'
 
-
+dreamtown_speed='{"message":"2dyzwHhOjSXgMxAMvzdRk+EBwZSgivbPCmVsGRYgl1L1mOsqVwzDA8zlYfe7KxOdHnpEMclhktx70JN\/C5hkp5thD1gZZEqKnolvM2rTEDgok1WC9k84vJykvw3YUUdEhETr5O\/Z4oCXiMXJhURwzFdKz9Akyu6X2j9iXFJUmoA5Rk6L1A0\/0qAglAw2B3irj05qd\/cv\/Ixyb+30jxKgcffWDZLRwNxYxRgdhkTe3MHd\/SnLpSS\/WiKylOpfdPBBovzyXqujhiNg3dcy8ZMe+mU9zxVOgY7QW0IDhNJHR8prFnX8CsuI+HbIMiH798RX7eTipxXraxhpPkje16gKVpsTY9mKcOoluidOfgwqXX8cTVgSx3QS\/JguUmbnp5YxF8z2LMyR5NY33hKF\/E9XCrHEwKNO9XexAW9XaG8d65iO\/\/EO\/s9bSNuC7qwrL82tEPIIbgN+qHl\/mgVP9uoziKoBbRsbX+nm5kxkNHZ2Seyk4kJZoX+U6xdYKeRuHLif7EMMGoSqaQiiILGhi969DG4iLq1UzC\/wxLomRq+6neZNkeBKlczZ7JMVH9rDjapLKXQj+n4kti3iJ36XwNrkOaTtfmxYxL0cEyEXUBJ3PUaBLbl0xwAZHFMOf8zCOiXw2+HxoIMTUw1g0qRuSwvNAV6Vx+u07TCIDPjvm1v+fcRk+luslKfa4caUoXNi2h+52oNrAfdAWua8IVTH5bFCwu+9NSL6xspeI72gMe+0uQJiHrQbwk118VxTqUjo5kxkau+\/ilTo9HiH\/PoluX\/iwi5n5uqKUQyrcMmMnmfalRuiuyH+6WmpCpnNTz2vzUQmlVKEErerRBTf+i4yAZIeO7l0LE74aISn7cBdFXjcWd3AxlI\/4RbLE7DLk1zMThe8Dffn6P9rZDIwAWI+IimA9cbO2hZI1dYxMRrNodVioerBT5zo5DzWMtVFVaMfhEPNg6r2v0LWD4i8bj0GiP1tZp\/GSWJsWD4Oh95mPTflxwYYtepUwCgqp5cpYXnwyTA9l\/ZgcnxvD8k0fv4swCy862Ynai42mKKMDctzjEHrFt3bgsrAcOkCpdur5PWv3L\/4w3q3Fq5BL+gtodLKxddKNc0lfET6ZMsOso9SeSrhfsXjQHimk10+xk+qncGQwMUwaOpY46F55yl8gzTYo3EGq+cV47uCmLPgKqMSVWzdardcb4g\/dIpgYwBAkunI4lGpuW5BpJte82Xq53XNlU8dV0Hkw\/ObFMroz6MR5mVH01gRr0bLMXTo8jciBCcy2xaloLJEcQVL65Tirv0QQE0x1Cjm7uHo5EwG1WV2erojYb40YFWZIyZ01YNzh5YHiVnhN8j6csf\/sDL9xZRReDdx65d67ML7uT+ZmUG7sFnIyte3HTsml8NkM0MWYoWiu7zSlOB8pJmECtYsfbUsza3e2GwRWcBTPrI2+FwpmaqyJYv6pmj+t6bpnGK383EMWfPCiWyY4KuuRpPk03A4aFdh1L8RaPdidapIsBuDyOndYudPNHR4hanEjLEAOOclyzd3VKBoY09sEdGfmQ06GgS4+jb1RpTILleWPYnL8f2KZ3bXqrfEmLLesix3HlXmjK9rJ6IRA5Uaj8Sefn65iGdk8IkEXfi4YXzLixG8RlLsK5UIjv5H8Cy3nxepWdt89qFfuUN8dndlus9jPJKIY4VRVuqBUlIT2M5NtMPtrXveqI0jQ4ESthJg8rUMCtrF1pvBu2BzC7qcCeUt9J+g0dXYJdiBX1QcJuO+\/yaWMmLREhsWJWDLKM5QrD5ruUppVg1q3W+LZ5jSy83nckEbMIwPlc0oA7f+nJWLdYB0pmTJ9sDq9Qv+Z7ZR3JqRbZrPUhFpOJWTcfIFGaCYOF0N0U+YFS0TgVII8NdnnNgMl\/vSVYp1LjBDHIoKt62KlQlNkaDDinp2v1H0QQOqJ5COepLajC73b9FOdP09VIZmAfuTyo\/L2YjcB5AnfNWWOpBq5KtQnHTMnOzddDqVnW7qw6cEAygIqLvlepqWhPGKOGJJ40S4rnoK7MvmloRYI4zkhZkKR8XGamgmRiKhaXktBhG7GCTMX23Y\/vDHizxKUjCA9Y1Fkaxgwjv8eU61ejopWPEr+3YF1c17jhzw43x\/Um0ctOTrJue2bx\/EExurIyJBGoIyiCRWP6oRZqU7smYYqPqgNeE5+c1VxaA9GcspfjEcwn2i8D0SVWIkg5WpztlaEaFD5DJC9PDo0WEyepfkglHYWfEQYbWPQbzzrWzH4tKJpe\/R9ducZpSH6LccareIydx9nUNEUFpbgGqXyR3SCRUiEkrGAx2ya4CWolV3jex1twPCouKhPNYjdBpsSCWtdN81f3FNvAGKw2KlWEV0zLX8Gb284WMcBJ9OErFGOzrsvVOaoTNk\/mru8q5UhcvJf2\/IvnARmBniL0iS60hHwS5JuZvIPqMZ5IeXqqPzJUsGKBljWXZDN1f91GXg4c4LHqVlG6qKAb8EPvgpei5dBw97ewUhJs4MJ9ylrdphUnCFaRbXzuch0WuN+VJzTzGe4ZoznXBkoiDYFHVy64GtRufSZQTWmJznl4K3L87TvOw5AMU0N4lhy+CICotUV7iXBWqi7V5w2yZDAS6cC+dUOYskcfyUqYvB02Uos9mgZcLYIZsnNdg1xWMIsLJTKCHuU01\/WyTA+twPR+AnpSXDY9iHTzvq1wfoG+fTNQn+nG5aeB0Bq\/Gcpd\/avawNDJqD+NgklMT800RPliNDymJ5t5qECLWtk6geSpCJ+RqZ\/qUNhIO12x3OLyNYQsZ6DypyBpia+QpeS59ShGBKV+SgWWzqRf10shcSzWVeniEPu4D\/fB\/H4WZX56fk6XMvt1gCXdBzS7zLenUzpbXyJ9c1dUtiiv6Bw1Z4Mw9y7rrb7XPy+jeqmF8u5h\/yb6kxy37oEemxnH7kjbqEk\/XlWBJCtFvcUXXtvP1IlEYU634daMnE\/K86hcE\/j+d5usrZa1bx04l8bTwvF2QOA1w2q+qFvk75SiWeiD+tGKk7NHHmLA93Hn65ASUqM2dfV01RWIGFaQMNKSeXunLCyzS0NgsAhskqcOnXenUUhhq6AAll\/HgG1hj+Qnb1N29pXo3mGW09DM9ygpshFblqocaKgjHMgIVbrNjtuUe36MqUy0iN0KK1QhVUeNG\/SLZRi\/MiFezX6HW2AdH+e1zqvgvborjByqF\/krAvFw6ddtq63m31NbGfi4zsv86LbS+zuR9a2CLGUVTjjqKaQNTNK9+K8fLRC4O7PoGm4HqTmkTGNMVYOpNj68cYkXSgxsKCeKpOpUZR8PPXy\/+1IT3nRgAT2KKKiFnFVWYedK1xL9p42NFFFevY8QWRrTbZoeshFMbMTHpWhE\/722Yny4OxFOY520wV1rJ+J5Obhq73U26gKTHQi4oheGgolS1SgkjUIxmfozjiHEVgaMAwEu+9rmWgWAzKG5Oz0Jok9Cnx9R5XDxMWMBBz4MHCBMjfJpOG6X+ecPfXXhV+rrBgMphC5UF0Gr6JOK0mZncZiIrsMLKHOeZOfGMk51x2dnvHdGmWRPuemW0yAhUpR\/6TJYz9RbvwCbunvEvq1Io+Di7dilVf9pKRw6Dz7uw3WqEslcBJF3TK5QNOpKgUC2yXXOJwYrlEno0oX1z\/kyuz7MK46MApnKVQ5pQNYunglAy7MI0bTmHNZN2Gh4hcUOGhYTMkgCA2ItWd0ynzx8Ap\/fEfEIOhCjTaP","cypher":2}'
 
 
 
@@ -76,7 +78,7 @@ def activityTreeMoney():
   try:
      activityTreeMoney_getActivityTaskList()
      activityTreeMoney_getConfig()
-     activityTreeMoney_watering()
+     
      activityTreeMoney_receiveDayWelfare()
      lotteryMachine_drawLuck()
   except Exception as e:
@@ -111,7 +113,7 @@ def mineral_attendance():
              msg=number+'单日打卡已报名|'
              loger(msg)
           
-          if not userRes['result']['attendSituationList'][0]:
+          if len(userRes['result']['attendSituationList'])==0:
              attendance_attend(number)
           else:
             msg='已打卡(5-8点)|'
@@ -305,7 +307,7 @@ def mineral_ershouche_look():
         for infoId in infoIdlist:
            print(infoId)
            nm+=1
-           if num==11:
+           if nm==11:
               break
            infoId=str(infoId)
            response = requests.post('https://app.58.com/api/detail/car/ux/ifUX',headers=hd3,data='infoId='+infoId,timeout=10)
@@ -387,6 +389,11 @@ def activityTreeMoney_getConfig(push=0):
           activityTreeMoney_receiveBottle()
         if userRes['data']['treeConfig']['bottleConfig']['canQuicken']==1:
           activityTreeMoney_quickenBottle()
+        
+        if userRes['data']['usableEnergy']>10:
+          for i in range(int(userRes['data']['usableEnergy']/10)):
+            activityTreeMoney_watering()
+            time.sleep(1)
         
    except Exception as e:
       print(str(e))
@@ -487,11 +494,11 @@ def lotteryMachine_drawLuck():
    print('\n 【lotteryMachine_drawLuck】')
    try:
         
-        response = requests.post('https://xzd.hswchangdu.com/lotteryMachine/drawLuck',headers=hd3,timeout=10)
+        response = requests.post('https://xzd.hswchangdu.com/lotteryMachine/drawLuck',headers=hd2,timeout=10)
         userRes=json.loads(response.text)
         
-        print(userRes)
-        if userRes['code']==0:
+        print(userRes['desc'])
+        if userRes['code']=='0':
            lotteryMachine_drawLuck()
            time.sleep(2)
    except Exception as e:
@@ -507,15 +514,20 @@ def dreamtown_maininfo(push=0):
         #print(userRes)
         userInfo=userRes['result']['userInfo']
         msg=f'''{userInfo['nickName']}_{userInfo['level']}|{userInfo['coin']}/{userInfo['offlineCoin']}|'''
+        dreamtown_house=userRes['result']['levelInfo']['house']
+        dreamtown_car=userRes['result']['levelInfo']['car']
+        msg+=f'''{dreamtown_house}|{dreamtown_car}|'''
+        
         if push==1:
            loger(msg)
            return
         if int(userInfo['offlineCoin'])>10000:
            dreamtown_offlineicons()
-        dreamtown_house=userRes['result']['levelInfo']['house']
-        dreamtown_car=userRes['result']['levelInfo']['car']
-        msg=f'''{dreamtown_house}|{dreamtown_car}'''
-        print(msg)
+        
+        
+        
+        #加速
+        _reward_video(dreamtown_speed)
         
         levelInfo=userRes['result']['locationInfo']
         #print(levelInfo)
