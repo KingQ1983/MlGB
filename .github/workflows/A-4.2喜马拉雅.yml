@@ -1,4 +1,4 @@
-name: 喜马拉雅极速版
+name: A-4.2喜马拉雅
 
 on:
   schedule:
@@ -18,10 +18,10 @@ jobs:
           python-version: 3.7
          
       - name: 'Install requirements'
-        run: pip install -r ./requirements.txt 
+        run: pip install -r ./-/requirements.txt 
         
       - name: 'run 喜马拉雅极速版' 
-        run: python3 xmly_speed.py 
+        run: python3 ./-/xmly_speed.py 
         env:
             XMLY_SPEED_COOKIE: ${{ secrets.XMLY_SPEED_COOKIE }}  #必须
             # XMLY_ACCUMULATE_TIME: ${{ secrets.XMLY_ACCUMULATE_TIME }} #非私密信息，去掉
