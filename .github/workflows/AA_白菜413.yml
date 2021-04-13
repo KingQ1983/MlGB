@@ -1,0 +1,26 @@
+name: AA_白菜413
+
+on:
+  schedule:
+    - cron: '15 */2 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT 
+        
+      - name: '公众号iosrule' 
+        run: python3 ./-/BaiCai_413.py 
+        env:
+            bd_hd: ${{ secrets.bd_hd }}
+            bd_ck: ${{ secrets.bd_ck }}
