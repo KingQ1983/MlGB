@@ -15,7 +15,7 @@ osenviron={}
 djj_djj_cookie=''
 Card_telegram=''
 Card_num=0
-github=0#判断是否在远程运行
+github=1#判断是否在远程运行
 
 #618入口https://carnivalcity.m.jd.com/#/home
 #通知telegram格式,机器人id@自己的id
