@@ -276,7 +276,7 @@ def Get_shareIdlist():
         if github==0:
             print(f"【{ck+1}】用户名:{pinNameList[ck]},邀请码:{shareId}\n")
         else:
-            print(f"【{ck+1}】]}邀请码:{shareId}\n")
+            print(f"【{ck+1}】邀请码:{shareId}\n")
         if not shareId:
           continue
         if not ck in shareIdlist:
@@ -313,10 +313,10 @@ def Readint():
       Card_telegram = osenviron["Card_telegram"]
    if not Card_telegram:
        print(f'''【通知参数】 is empty,DTask is over.''')
-   if "DJJ_DJJ_CK" in os.environ:
-      djj_djj_cookie = os.environ["DJJ_DJJ_CK"]
-   if "DJJ_DJJ_CK" in osenviron:
-      djj_djj_cookie = osenviron["DJJ_DJJ_CK"]
+   if "JD_COOKIE" in os.environ:
+      djj_djj_cookie = os.environ["JD_COOKIE"]
+   if "JD_COOKIE" in osenviron:
+      djj_djj_cookie = osenviron["JD_COOKIE"]
    if not djj_djj_cookie:
        print(f'''【djj_djj_cookie】 is empty,DTask is over.''')
        exit()
