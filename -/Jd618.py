@@ -273,7 +273,10 @@ def Get_shareIdlist():
    try:
      for ck in range(len(cookiesList)):
         getshareId(cookiesList[ck])
-        print(f"【{ck+1}】用户名:{pinNameList[ck]}邀请码:{shareId}\n")
+        if github==0:
+            print(f"【{ck+1}】用户名:{pinNameList[ck]},邀请码:{shareId}\n")
+        else:
+            print(f"【{ck+1}】]}邀请码:{shareId}\n")
         if not shareId:
           continue
         if not ck in shareIdlist:
