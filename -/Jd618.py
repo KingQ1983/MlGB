@@ -360,8 +360,8 @@ def start():
          	print(f"【{ck+1}】-【用户名:{pinNameList[ck]}】-任务开始\n")
          else:
             print(f"【{ck+1}】-任务开始\n")
-         if ck==0:
-             continue
+         #if ck==0:
+             #continue
          count_int()
          Start_Support(cookiesList[ck])
          #continue
