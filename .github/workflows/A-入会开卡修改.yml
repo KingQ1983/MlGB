@@ -1,0 +1,25 @@
+name: A-入会开卡修改
+on:
+  schedule:
+    - cron: '5 16,23,4,11 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/JDRuhui_modify.py
+        env:
+            Card_telegram: ${{ secrets.Card_telegram }}
+            JD_COOKIE: ${{ secrets.JD_COOKIE }}
