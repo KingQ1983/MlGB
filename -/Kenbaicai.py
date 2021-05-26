@@ -84,7 +84,7 @@ def trump(b):
     elif int(zs[0])==b and int(zs[1])==0 and int(zs[2])<50:
       zs=datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%H:%M:%S", )
       print('go.....'+zs)
-      for j in range(len(btlist)):
+      for j in range(2,len(btlist)):
           print(f'''===={str(j+1)}''')
           hd['Cookie']=btlist[j]
           for u in range(len(urllist)-1):
