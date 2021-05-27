@@ -93,7 +93,7 @@ ximeihdArr = process.env.XIMEIHD.split();
         if (ximeihdArr[i]) {
          
           ximeiurl = ximeiurlArr[i];
-          ximeihd = ximeihdArr[i];
+          ximeihd = ximeihd = JSON.stringify(ximeihdArr[i]);
           $.index = i + 1;
           console.log(`\n开始【西梅${$.index}】`)
           await ximei1()
@@ -127,10 +127,10 @@ $.log(ximeihd)
 function ximei1(timeout = 0) {
   return new Promise((resolve) => {
     setTimeout( ()=>{
-      if (typeof $.getdata('ximeihd') === "undefined") {
-        $.msg($.name,"",'请先获取西梅数据!😓',)
-        $.done()
-      }
+     // if (typeof $.getdata('ximeihd') === "undefined") {
+        //$.msg($.name,"",'请先获取西梅数据!😓',)
+        //$.done()
+     // }
 
 let url = {
         url : "https://app.hubonews.com/v3/articles/list",
