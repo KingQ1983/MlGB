@@ -314,7 +314,7 @@ Content-Disposition: form-data; name="pageSize"
            
          else:
             print('\n我的主页')
-            print(f"{res['data']['userInfo']['nickname']}|{res['data']['userInfo']['energy']}|{res['data']['userInfo']['score']}")
+           # print(f"{res['data']['userInfo']['nickname']}|{res['data']['userInfo']['energy']}|{res['data']['userInfo']['score']}")
             if res['data']['boxWaitingOpen']==1:
              openbox()
             for data in res['data']['energyList']:
@@ -370,7 +370,7 @@ def start():
    print('=======end=======')
 #===================
 
-   print(msg)
+   #print(msg)
    Card_telegram=telelist[0]
    t =datetime.now(tz=tz.gettz('Asia/Shanghai')).strftime("%Y-%m-%d %H:%M:%S",)
    pushmsg('超级大乐透'+t,msg)
