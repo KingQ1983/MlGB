@@ -93,7 +93,7 @@ ximeihdArr = process.env.XIMEIHD.split();
         if (ximeihdArr[i]) {
          
           ximeiurl = ximeiurlArr[i];
-          ximeihd = ximeihd = JSON.stringify(ximeihdArr[i]);
+          ximeihd = JSON.stringify(ximeihdArr[i]);
           $.index = i + 1;
           console.log(`\n开始【西梅${$.index}】`)
           await ximei1()
