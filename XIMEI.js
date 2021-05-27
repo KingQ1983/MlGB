@@ -57,7 +57,7 @@ hostname = app.hubonews.com
 const $ = new Env('西梅');
 let status;
 status = (status = ($.getval("ximeistatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
-const ximeiurlArr = [], ximeihdArr = [],ximeicount = ''
+let ximeiurlArr = [], ximeihdArr = [],ximeicount = ''
 let times = Math.round(Date.now())
 let ximeiurl = $.getdata('ximeiurl')
 let ximeihd = $.getdata('ximeihd')
