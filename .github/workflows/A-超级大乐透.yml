@@ -1,0 +1,27 @@
+name: A-超级大乐透
+
+on:
+  schedule:
+    - cron: '15 */4 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/Daletou.py
+        env:
+            Card_telegram: ${{ secrets.Card_telegram }}
+            choujiang_url: ${{ secrets.choujiang_url }}
+            choujiang_hd: ${{ secrets.choujiang_hd }}
