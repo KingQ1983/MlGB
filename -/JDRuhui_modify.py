@@ -18,7 +18,7 @@ requests.packages.urllib3.disable_warnings()
 
 timestamp = int(round(time.time() * 1000))
 
-
+Card_telegram=''
 
 osenviron={}
 djj_djj_cookie=''
@@ -225,6 +225,7 @@ def getShopOpenCardInfo(venderId, headers, shopid, userName):
                         if openCardStatus == 1:
                             url = 'https://shopmember.m.jd.com/member/memberCloseAccount?venderId={}'.format(venderId)
                             print("\t\t╰[账号：{0}]:您已经是本店会员，请注销会员卡24小时后再来~\n注销链接:{1}".format(userName, url))
+                            pushmsg('注销卡',f"\t╰{venderCardName}:入会赠送【{getBean}豆】，可入会\n"+"\t\t╰[账号：{0}]:您已经是本店会员，请注销会员卡24小时后再来~\n注销链接:{1}".format(userName, url))
                             context = "[{3}]:入会{1}豆，{0}销卡：{2}".format(venderCardName, getBean, url, nowtime())
                             return 1, 1
                         return activityId, getBean
@@ -282,7 +283,7 @@ def getResult(resulttxt, userName, user_num):
             try:
                 result = result_data['result']['giftInfo']['giftList']
                 #print(f"\t\t╰用户{user_num}【{userName}】:{message}")
-                print(f"\t\t╰用户【{user_nu}】:{message}")
+                print(f"\t\t╰用户【{user_num}】:{message}")
                 for i in result:
                     print("\t\t\t╰{0}:{1} ".format(i['prizeTypeName'], i['discount']))
                     if i['prizeTypeName']=='京豆':
@@ -330,8 +331,10 @@ def progress_bar(start, end, threadNum):
 # 为多线程准备
 def OpenVipCrad(startNum: int, endNum: int, shopids, cookies, userNames, pinNameList, threadNum):
 
+    
     for i in range(startNum, endNum):
         user_num = 1
+        
         activityIdLabel = 0
         for ck, userName, pinName in zip(cookies, userNames, pinNameList):
             
@@ -371,7 +374,7 @@ def OpenVipCrad(startNum: int, endNum: int, shopids, cookies, userNames, pinName
                 print(e)
                 continue
             user_num += 1
-            print(user_num)
+            
     time.sleep(1)
     progress_bar(endNum, endNum, threadNum)
 
