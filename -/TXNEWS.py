@@ -450,7 +450,7 @@ def clock(func):
 def start():
    global result
    check()
-   n=5
+   n=30
    for max in range(n):
      index=0
      print(f"【{n}--{max}】")
@@ -469,7 +469,7 @@ def start():
           pushmsg('腾讯新闻',result)
           #result=''
      if max<n-1:
-       time.sleep(30)
+       time.sleep(60)
      
 def main_handler(event, context):
     return start()
