@@ -456,6 +456,7 @@ def start():
      print(f"【{n}--{max}】")
      for count in cmcookiesList:
        index+=1
+       result=''
        print(f'''>>>>>>>>>【账号{str(index)}开始''')
        headers['Cookie']=count
        tx_user()
@@ -466,9 +467,9 @@ def start():
        time.sleep(2)
        if max==n-1:
           pushmsg('腾讯新闻',result)
-          result=''
+          #result=''
      if max<n-1:
-       time.sleep(420)
+       time.sleep(20)
      
 def main_handler(event, context):
     return start()
