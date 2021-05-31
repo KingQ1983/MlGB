@@ -450,9 +450,9 @@ def clock(func):
 def start():
    global result
    check()
-   index=0
    n=5
    for max in range(n):
+     index=0
      print(f"【{n}--{max}】")
      for count in cmcookiesList:
        index+=1
@@ -469,7 +469,7 @@ def start():
           pushmsg('腾讯新闻',result)
           #result=''
      if max<n-1:
-       time.sleep(20)
+       time.sleep(30)
      
 def main_handler(event, context):
     return start()
