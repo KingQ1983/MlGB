@@ -1,0 +1,43 @@
+name: 麻花腾
+
+on:
+  schedule:
+    - cron: '*/45 * * * * '
+  watch:
+    types: [started]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7 
+
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.txt
+
+      - name: 'run txnew' 
+        run: python3 ./-/TXNEWS.py 
+        env:
+            TX_COM_COOKIE: ${{ secrets.TX_COM_COOKIE }}
+            TX_RD_COOKIE11: ${{ secrets.TX_RD_COOKIE11 }}
+            TX_RD_COOKIE12: ${{ secrets.TX_RD_COOKIE12 }}
+            TX_RD_COOKIE21: ${{ secrets.TX_RD_COOKIE21 }}
+            TX_RD_COOKIE22: ${{ secrets.TX_RD_COOKIE22 }}
+            TX_RD_COOKIE31: ${{ secrets.TX_RD_COOKIE31 }}
+            TX_RD_COOKIE32: ${{ secrets.TX_RD_COOKIE32 }}
+            TX_RD_COOKIE41: ${{ secrets.TX_RD_COOKIE41 }}
+            TX_RD_COOKIE42: ${{ secrets.TX_RD_COOKIE42 }}
+            TX_VD_COOKIE11: ${{ secrets.TX_VD_COOKIE11 }}
+            TX_VD_COOKIE12: ${{ secrets.TX_VD_COOKIE12 }}
+            TX_VD_COOKIE21: ${{ secrets.TX_VD_COOKIE21 }}
+            TX_VD_COOKIE22: ${{ secrets.TX_VD_COOKIE22 }}
+            TX_VD_COOKIE31: ${{ secrets.TX_VD_COOKIE31 }}
+            TX_VD_COOKIE32: ${{ secrets.TX_VD_COOKIE32 }}
+            TX_VD_COOKIE41: ${{ secrets.TX_VD_COOKIE41 }}
+            TX_VD_COOKIE42: ${{ secrets.TX_VD_COOKIE42 }}
+            Card_telegram: ${{ secrets.Card_telegram }}
