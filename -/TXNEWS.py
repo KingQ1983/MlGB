@@ -451,7 +451,7 @@ def start():
    global result
    check()
    index=0
-   n=6
+   n=5
    for max in range(n):
      print(f"【{n}--{max}】")
      for count in cmcookiesList:
