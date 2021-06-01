@@ -318,7 +318,7 @@ def start():
     cookiesList, userNameList, pinNameList = iscookie()
     djj_djj_cookie=cookiesList[0]
     b=7000
-    e=7030
+    e=10000
     print('开启任务')
     #multrun(10352080,10352090)
     multrun(b,e)
