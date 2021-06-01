@@ -1,0 +1,25 @@
+name: A-获取shopid
+on:
+  #schedule:
+    #- cron: '5 16,0,4,12 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/Shopid.py
+        env:
+            Card_telegram: ${{ secrets.Card_telegram }}
+            MM_COOKIE: ${{ secrets.MM_COOKIE }}
