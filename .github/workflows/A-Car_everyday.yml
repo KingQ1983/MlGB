@@ -1,0 +1,26 @@
+name: A-Car_everyday
+#天天领钱
+on:
+  schedule:
+    - cron: '0 2,3 * * *'
+  workflow_dispatch:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        
+      - name: 'Set up Python'
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.7
+         
+      - name: 'Install requirements'
+        run: pip install -r ./-/C.TXT
+        
+      - name: '-' 
+        run: python3 ./-/Car_everyday.py
+        env:
+            Card_telegram: ${{ secrets.Card_telegram }}
+            Car_cookies: ${{ secrets.Car_cookies }}
